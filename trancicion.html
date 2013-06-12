@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<style type='text/css'>
+	
+
+	div{
+	font-family: arial,verdana;
+	font-size: 24px;
+	font-weight: bold;
+	width: 100px;
+	height: 100px;
+	background: red;
+
+	/* transition durara 2sg cuando pase ensima de el y cambie el css*/
+	-webkit-transition: width  2s, height 2s,-webkit-transform 2s ;
+	-moz-transition: width 2s, height 2s ;
+	-ms-transition: width 2s, height 2s ;
+	-o-transition: width 2s, height 2s ;
+	transition: width 2s, height 2s ;
+
+
+	}
+
+	div:hover{
+
+/*entrara en funcionamiento cuando pongamos el cursor encima del div*/
+
+width: 300px;
+height: 200px;
+-webkit-transform: rotate(180deg);
+   -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+     -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+
+	}
+
+
+
+
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<div>Hola ... soy un div que se mueve</div>
+</body>
+</html>

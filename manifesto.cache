@@ -1,0 +1,30 @@
+#manifiesto vercion 1.0
+#este es un manifiesto para mi pagina web
+CACHE MANIFEST 
+
+#PAGINAS CSS JAVASCRIPT IMAGENES DEBEN SER CACHEADAS
+
+offline.html
+estilos.css
+images/image.png
+scripts/miscript.js
+
+#del lenguaje del servidor php 
+NETWORK:
+log.php
+visitas.php
+
+#SI LOS ARCHIVOS FALLAN ,vendra aqui haber si en los alternativos lo encuentra
+FALLBACK:
+img/image.png
+archivo.php
+
+
+
+
+
+
+
+
+
+

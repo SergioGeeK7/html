@@ -1,0 +1,301 @@
+#logotipo{
+
+	
+	font-size: 0px;
+	float: left;
+	position: absolute; /* EL LOGOTIPO FLOTE POR ENSIMA DE TODO LO DEMAS*/
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#tipo{
+
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+	font-size: 48px;
+	color: rgba(255,255,255,1);  /* blanco y opaco...*/
+	text-shadow:2px 2px 5px rgba(0,0,0,0.5); /* negro semitrasparente*/
+
+
+	/* mover artificialmente a la derecha */
+
+	-webkit-transform: translate(150px,0px);
+	   -moz-transform: translate(150px,0px);
+	    -ms-transform: translate(150px,0px);
+	     -o-transform: translate(150px,0px);
+	        transform: translate(150px,0px);
+
+}
+
+
+#logo{
+
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 100%;
+	vertical-align: middle;
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+	animation:late 2s;
+	-webkit-transform: scale(1,1);/* logo crece al 200%*/
+	   -moz-transform: scale(1,1);/* logo crece al 200%*/
+	    -ms-transform: scale(1,1);/* logo crece al 200%*/
+	     -o-transform: scale(1,1);/* logo crece al 200%*/
+	        transform: scale(1,1);/* logo crece al 200%*/
+	-webkit-animation:late 5s;
+
+	-webkit-animation-iteration-count:2; /* repetir este numero de veces o infinite  */
+	
+
+
+}
+
+
+@@-webkit-keyframes late {
+	0% { -webkit-transform: scale(1,1); }
+	45% { -webkit-transform: scale(1,1); }
+	47% { -webkit-transform: scale(0.98,0.98); }
+	50% { -webkit-transform: scale(1.02,1.02);}  /* ahora la escala es menor y la estrella salta menos*/
+	53% { -webkit-transform: scale(0.9,0.9); } /* ahora se contrae */
+	55% { -webkit-transform: scale(1,1); }
+	100% { -webkit-transform: scale(1,1);  }
+}
+@-moz-keyframes late {
+	0% {  }
+	100% {  }
+}
+@-ms-keyframes late {
+	0% {  }
+	100% {  }
+}
+@-o-keyframes late {
+	0% {  }
+	100% {  }
+}
+@keyframes late {
+	0% {  }
+	100% {  }
+}
+
+
+
+/* <div id='registro' > <a href=''>pulsa AQUI para registarte en la web </a> </div>*/
+
+
+a{
+
+text-decoration: none;
+color: rgba(0,0,0,1); /* texto de color negro*/
+}
+
+
+#registro{
+
+color: rgba(0,0,0,1); /* texto de color negro*/
+font-size: 10px;
+text-shadow:0px 0px 5px rgba(0,255,0,0);  /* VERDE*/  /* rojo verde azul opacidad*/
+
+animation:registrate 2s;
+
+-webkit-animation:registrate 0.5s;
+-webkit-animation-iteration-count:infinite;
+
+}
+
+
+
+@-webkit-keyframes registrate {
+	0% {text-shadow:0px 0px 5px rgba(0,255,0,0);  }
+	50% { text-shadow:0px 0px 5px rgba(0,255,0,1); }
+	100% { text-shadow:0px 0px 5px rgba(0,255,0,0); }  /* LOS COLORES SE PUEDEN VER EN EL GIMP SACANDO SOLO LAS LETRAS R G B */
+}
+@-moz-keyframes registrate {
+	0% {  }
+	100% {  }
+}
+@-ms-keyframes registrate {
+	0% {  }
+	100% {  }
+}
+@-o-keyframes registrate {
+	0% {  }
+	100% {  }
+}
+@keyframes registrate {
+	0% {  }
+	100% {  }
+}
+
+
+
+/* formularios */
+
+input{
+	padding: 5px;
+	text-shadow:2px 2px 3px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+
+	transition:box-shadow: 1s,background 1s, border 1s;
+	-webkit-transition: -webkit-box-shadow: 1s,background 1s, border 1s;
+
+
+}
+
+/*
+input::hover,
+:focus {
+	
+}*/
+
+input:hover {
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* negro opaco */
+	-webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* negro opaco */
+	background: rgba(0,255,0,0.1);
+	border:2px solid white;
+	
+}
+
+/* ANIMACION DE UN BANNER */
+
+#presentacion {
+	
+	padding: 0px;   /* alinear un poco el texto para que no se salgan del banner*/
+	margin: 0px;   /* alinear un poco el texto para que no se salgan del banner*/
+
+
+	/*  para el tamaño del banner*/
+	text-align: left;
+	width: 100%;
+	height: 0px;  /* ESTADO ORIGINAL DE LA ANIMACION*/
+
+	/*-----------*/
+	
+	background: rgba(0,0,0,0.1);
+	background: url('../img/fondobanner.jpg') center center;
+	background-size: 800px 400px; /* anchura altura*/
+	box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);   /* UNA SOMBRA QUE MARCA EL BANNER*/
+	-webkit-box-shadow: inset 0px 0px 25px rgba(0,0,0,0.2);
+
+	
+	-webkit-webkit-animation: esconde 15s;
+	-moz-webkit-animation: esconde 15s;
+	-ms-webkit-animation: esconde 15s;
+	-o-webkit-animation: esconde 15s;
+	webkit-animation: esconde 15s;
+
+
+}
+
+
+@@-webkit-keyframes esconde {
+	0% { height: 100px;background-size: 800px 400px;} /* segundo 0 */     /* EMPIEZA EN ESTE PERO TERMINA EN EL VALOR DEFAULT*/
+	50% {height: 100px; } /* segundo 7.5 */
+	100% { height: 0px;background-size: 1600px 800px; } /* segundo 15 */    /* SE IRA INCREMENTANDO EL BANNER*/
+}
+@-moz-keyframes esconde {
+	0% {  }
+	100% {  }
+}
+@-ms-keyframes esconde {
+	0% {  }
+	100% {  }
+}
+@-o-keyframes esconde {
+	0% {  }
+	100% {  }
+}
+@keyframes esconde {
+	0% {  }
+	100% {  }
+}
+
+
+/* ANIMACION DE LOS TEXTOS DEL BANNER */
+/* dos divs incrustados con un h2 */
+
+
+#animaciontexto1{
+	
+	position: absolute;
+	font-family: opensans;
+	color: rgba(255,255,255,0);/* blanco */
+	text-shadow:3px 3px 5px rgba(0,0,0,0.0);   /* 3px de desenfoque*/
+	font-size: 32px;
+
+	/* moveremos el texto transform */
+	-webkit-webkit-transform: translate(150px,0px);/* x, y */
+	-moz-webkit-transform: translate(150px,0px);/* x, y */
+	-ms-webkit-transform: translate(150px,0px);/* x, y */
+	-o-webkit-transform: translate(150px,0px);/* x, y */
+	webkit-transform: translate(150px,0px);/* x, y */
+	
+
+	-webkit-animation: muevetexto-uno 5s;
+
+}
+
+
+@-webkit-keyframes muevetexto-uno {
+	0% {color: rgba(255,255,255,0); -webkit-transform: translate(-150px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.0);  }
+	25% {color: rgba(255,255,255,1); -webkit-transform: translate(0px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.3);  }
+	50% { color: rgba(255,255,255,1);-webkit-transform: translate(0px,0px); text-shadow:3px 3px 5px rgba(0,0,0,0.3); }
+	75% {color: rgba(255,255,255,1);-webkit-transform: translate(0px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.3);   }
+	100% {color: rgba(255,255,255,0); -webkit-transform: translate(150px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.0); }
+}
+@-moz-keyframes muevetexto-uno {
+	0% {  }
+	100% {  }
+}
+@-ms-keyframes muevetexto-uno {
+	0% {  }
+	100% {  }
+}
+@-o-keyframes muevetexto-uno {
+	0% {  }
+	100% {  }
+}
+@keyframes muevetexto-uno {
+	0% {  }
+	100% {  }
+}
+
+
+
+#animaciontexto2{
+
+	position: absolute;
+	font-family: opensans;
+	color: rgba(255,255,255,0);/* blanco */
+	text-shadow:3px 3px 5px rgba(0,0,0,0.0);   /* 3px de desenfoque*/
+	font-size: 32px;
+
+	/* moveremos el texto transform */
+	-webkit-webkit-transform: translate(150px,0px);/* x, y */
+	-moz-webkit-transform: translate(150px,0px);/* x, y */
+	-ms-webkit-transform: translate(150px,0px);/* x, y */
+	-o-webkit-transform: translate(150px,0px);/* x, y */
+	webkit-transform: translate(150px,0px);/* x, y */
+	
+
+	-webkit-animation: muevetexto-dos 5s;
+	-webkit-animation-delay:5s; /* empezara despues de 5sg .... cuando acabe la primera*/
+
+}
+
+
+@-webkit-keyframes muevetexto-dos {
+	0% {color: rgba(255,255,255,0); -webkit-transform: translate(-150px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.0);  }
+	25% {color: rgba(255,255,255,1); -webkit-transform: translate(0px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.3);  }
+	50% { color: rgba(255,255,255,1);-webkit-transform: translate(0px,0px); text-shadow:3px 3px 5px rgba(0,0,0,0.3); }
+	75% {color: rgba(255,255,255,1);-webkit-transform: translate(0px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.3);   }
+	100% {color: rgba(255,255,255,0); -webkit-transform: translate(150px,0px);text-shadow:3px 3px 5px rgba(0,0,0,0.0); }
+}
+
+
+
+

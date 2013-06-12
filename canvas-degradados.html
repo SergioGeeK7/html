@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<canvas id='degradados' width='400' height='400' style='border:1px solid black'>
+	tu navegador no soporta canvas
+
+<script type='text/javascript'>
+	
+var c=document.getElementById('degradados');
+var cxt=c.getContext('2d');
+
+// vector de direccion de degradado x y x y orizontal o vectical, en x o en y
+var grd=cxt.createLinearGradient(0,0,400,0);
+
+grd.addColorStop(0,'white');  // en el 0% introducira el color white
+//grd.addColorStop(0.25,"red");
+grd.addColorStop(0.5,'green');//desde 0 a blanco,50% en verde,100% en negro
+//grd.addColorStop(0.75,'blue');
+grd.addColorStop(1,'black'); // en el 100%
+
+// para materializar el radiante
+
+cxt.fillStyle=grd;
+cxt.fillRect(0,0,400,400);  // llena todo el canvas ya que tiene 400, 400 lo mismo que la etiqueta   0 empieza
+
+
+
+</script>
+
+
+</canvas>
+
+
+
+
+
+
+</body>
+</html>

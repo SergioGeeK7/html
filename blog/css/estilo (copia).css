@@ -1,0 +1,138 @@
+/* fuentes personalizadas*/
+
+@font-face{
+
+font-family: opensans-bold;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Bold.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Italic.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-bold-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-BoldItalic.ttf) format("truetype");
+
+
+}
+
+@font-face{
+
+font-family: opensans;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Regular.ttf) format("truetype");
+
+
+}
+
+
+
+
+/* estilos basicos */
+
+h1,h2,h3,h4,h5,h6{
+
+font-family:opensans-bold;
+
+
+}
+
+p{
+	font-family: opensans;
+}
+
+
+
+
+/* maquetacion principal */
+
+
+body{
+
+text-align: center;
+margin: 0px; /* eliminando margen por defecto*/
+background: lightgray;
+
+
+}
+
+#all{  /* margin ... osea al div que tiene todo ... TODO */
+
+text-align: left;  /* todo el texto se alineara a la izquierad*/
+margin: auto; /* todo el contenido se centrara en la pantalla*/
+width: 80%;
+height: 100%;
+background: gray;
+position: relative;
+
+}
+
+ 
+#cajaheader{
+
+width: 100%;
+height: 100px;
+position: absolute;
+background: darkgray;
+
+
+}
+
+header{
+display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+margin: auto;
+text-align: left;
+width: 100%;  /* esto se ajusta al 100% que le deje all el div que lo contiene todo*/
+height: 100%;
+background: darkgray;
+/*overflow: hidden;   todo lo que sobresalga del header se ocultara */
+}
+
+
+footer{
+	display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+	margin:auto;
+	text-align: center;  /* texto alineado al centro en los pies de pagina... bastante comun*/
+	width: 100%;
+	background: darkgray;
+}
+
+
+/* CONTENIDO POST ARTICLE Y ASIDE (TANGENCIAL)*/
+
+#post{
+
+width: 100%;
+
+}
+
+
+article{
+
+width: 50%;
+background: white;
+}
+
+aside{
+	float: right; /* flotar a la derecha*/
+	display: inline-table;
+	width: 40%;
+	background: white; /* fondo blanco para diagnosticar */
+
+
+}
+
+#sobremi{
+	
+	width: 100%;
+	height: 100%;
+	background: blue; /* para poder diagnosticar */
+
+
+}
+

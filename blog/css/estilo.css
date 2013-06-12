@@ -1,0 +1,678 @@
+/* fuentes personalizadas*/
+
+@font-face{
+
+font-family: opensans-bold;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Bold.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Italic.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-bold-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-BoldItalic.ttf) format("truetype");
+
+
+}
+
+@font-face{
+
+font-family: opensans;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Regular.ttf) format("truetype");
+
+
+}
+
+
+
+
+/* estilos basicos */
+
+h1,h2,h3,h4,h5,h6{
+
+font-family:opensans-bold;
+
+text-shadow:2px 2px 5px rgba(0,0,0,0.5);
+}
+
+h1,h2{
+
+-webkit-transform: translate:(150px 0px);
+   -moz-transform: translate:(150px 0px);
+    -ms-transform: translate:(150px 0px);
+     -o-transform: translate:(150px 0px);
+        transform: translate:(150px 0px);
+
+position: relative;
+color: white;
+font-size: 32px;
+top: -20%;  /* un margen a nivel superior de -20%*/
+margin-top: 10px;
+letter-spacing: 0px;
+display: inline;
+
+}
+
+
+
+
+
+
+
+
+p{
+	font-family: opensans;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.4);
+}
+
+
+/* MENU DE NAVEGACION*/
+
+nav{
+	
+	display: inline;
+	float: left;
+	margin: 20px;
+
+
+}
+
+/* en los menus de navegacion incontremos una lista no ordenada*/
+nav ul{
+
+font-size: 12px;
+padding: 0px;
+margin: 0px;
+background-color: gray;
+color: white;
+width: 50%;
+font-family: opensans;
+position: relative;
+display: inline;
+}
+
+nav ul li{
+
+display: inline; /* enves de estar uno ensima de otros, estan uno al lado de otros*/
+text-align: center;
+}
+
+nav ul li a{
+
+background: gray;
+color: white;
+text-decoration: none; /* asi eliminamos los puntos de la lista  */
+float: right;
+border:1px solid white;
+border-radius: 0px 10px 0px 10px;
+box-shadow: 0px 0px 5px white;
+width: 80px;
+}
+
+/* ponemos el raton ensima de el*/
+nav ul li a:hover{
+
+background: white;
+color: black;
+box-shadow: 0px 0px 25px white; /* aumentamos el resplandor cuando pasamos sobre el */
+
+}
+
+canvas{
+
+	border: 0px solid white;  /* controlamos el borde invididual del canvas para que tome el del enlaza a */	
+
+
+
+}
+
+
+
+
+
+/* maquetacion principal */
+
+
+body{
+
+text-align: center;
+margin: 0px; /* eliminando margen por defecto*/
+background: lightgray;
+
+
+background: url('../img/Texturas de metales - Www.10Pixeles.Com (9) (1).jpg'),url('../img/Metales-32.jpg');
+
+}
+
+#all{  /* margin ... osea al div que tiene todo ... TODO */
+
+text-align: left;  /* todo el texto se alineara a la izquierad*/
+margin: auto; /* todo el contenido se centrara en la pantalla*/
+width: 80%;
+height: 100%;
+background: gray;
+position: relative;
+
+/* fondo para todo */
+
+
+
+
+
+}
+
+ 
+#cajaheader{
+
+width: 100%;
+height: 100px;
+position: absolute;
+background: rgba(255,255,255,0.5);
+
+
+}
+
+header{
+display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+margin: auto;
+text-align: left;
+width: 100%;  /* esto se ajusta al 100% que le deje all el div que lo contiene todo*/
+height: 100%;
+/*background: rgba(255,255,255,0.5);*/
+overflow: hidden;  /* todo lo que sobresalga del header se ocultara */
+
+border:2px solid white;
+
+
+/* agregar compavilidad */
+
+border-radius: 5px 35px 0px 0px;
+box-shadow: 0px 0px 10px white; /* 10 pixeles de resplandor */
+
+
+
+}
+
+
+#logo{
+	
+width: 100px;
+height: 100px;
+display: inline;
+position: relative;
+
+
+
+}
+
+
+footer{
+	display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+	margin:auto;
+	text-align: center;  /* texto alineado al centro en los pies de pagina... bastante comun*/
+	width: 100%;
+	background: darkgray;
+   /* estilizando*/
+	border:1px solid white;
+	border-radius: 0px 0px 5px 35px;
+
+	box-shadow: 0px 0px 10px white;  /* 10 px de resplandor*/
+}
+
+
+/* CONTENIDO POST ARTICLE Y ASIDE (TANGENCIAL)*/
+
+#post{
+
+width: 100%;
+/* estilizando*/
+border:1px solid white;
+border-radius: 0px 0px 5px 35px;
+box-shadow: 0px 0px 10px white;  /* 10 px de resplandor*/
+background: rgba(255,255,255,0.8);  /* fondo blanco tranparende el 50%*/
+}
+
+
+article{
+
+width: 50%;
+/*background: white;*/
+
+/* cuando pase el cursor cambie de fondo el article*/
+background: rgba(255,255,255,0); /* con una transparencia de cero*/
+
+
+/* estilizado */
+
+width: 55%;  /* para que quepa todo el contenido aside*/
+/*float: left;  articulos flotaran a la izquierda*/
+margin: 10px; /* 10 px entre articulo y articulo*/
+height: 100%;
+/* agregar compatilividad en article*/
+display: table;
+
+border: 1px solid white;
+border-radius: 0px 25px 0px 25px;
+box-shadow: 3px 3px 10px black;
+padding: 10px 10px 10px 150px; /* incluir margen a los articulos   -- mar margen a la left que cualquier otro margen*/
+								/* donde pondremos la foto del que publica la noticia*/
+
+
+/* transparencia */
+
+opacity: 0.5;
+
+transition:opacity 1s,box-shadow 1s,transform 1s,background 1s ;  /* ahora crece y decrese cuando se saca el cursor y hace los 3 efectos de hover y los vuelve a poner normal*/
+
+/* ESTO SIRVE LA PROPIEDAD TRANSITION PARA QUE SE DEMORE DETERMINADO TIEMPO EN EFECTUAR UN CAMBIO DE EFFECTO, POR EJEMPLO ELEMENTO A HOVER*/
+
+-webkit-transition:opacity 1s,-webkit-box-shadow 1s,-webkit-transform 1s,-webkit-background 1s ;  /* le estamos diciendo que la (opacity) declaradoarriba se demore 1s en cambiar si cambia*/
+
+
+/* escala */
+
+-webkit-transform: scale(1,1);    /* uno , uno en la escala original*/
+   -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+     -o-transform: scale(1,1);
+        transform: scale(1,1);
+
+}
+
+time{
+
+	font-family: opensans;
+	font-size: 10px;
+
+}
+
+
+article:hover{
+	background: rgba(255,255,255,1); /* donde 1 representa el valor maximo de opacidad*/
+	opacity: 1;
+	box-shadow: 0px 0px 25px white;  /* DE TENER UNA SOMBRA PASARA A TENER UN RESPLANDOR BLANCO*/
+
+	/* escala */
+
+	-webkit-transform: scale(1.1,1.1);    /* uno , uno en la escala original*/
+	   -moz-transform: scale(1.1,1.1);
+	    -ms-transform: scale(1.1,1.1);		/* cuando pase el articulo por ensima el articulo se vera 10% mas grande*/
+	     -o-transform: scale(1.1,1.1);
+	        transform: scale(1.1,1.1);
+
+}
+
+
+
+
+aside{
+	float: right; /* flotar a la derecha*/
+	display: inline-table;
+	width: 40%;
+	/* background: white; fondo blanco para diagnosticar */
+
+	/* estilizando */
+	width: 20%;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid white;
+	border-radius:0px 25px 0px 25px; 
+	box-shadow: 3px 3px 10px black;
+
+}
+
+/* maquetando articulos relacionados o pasados*/
+
+aside ul{
+
+width: 100%;
+height: 100%;
+padding-left: 0px;
+padding-right: 0px;
+color: white;
+float: left;
+font-family: opensans;
+font-size: 10px;
+
+text-decoration: none; /* elimina los puntos */
+list-style:none; 
+}
+
+/* ahora cada uno de los elementos de esa lista */
+aside ul li{
+
+width: 100%;
+text-decoration: none; /* eliminar los puntos de la lista*/
+border: 1px solid white;
+border-radius: 0px 5px 0px 5px;
+
+}
+
+
+aside ul li a{
+
+width: 100%;
+height: 30px;  /* tamaño de los enlaces*/
+overflow:hidden; ;    /* si alguno se sale de la lista... se escondera*/
+text-decoration: none; /* quitar el surrayado de los enlaces*/
+
+}
+
+
+
+
+
+#sobremi{
+	
+	width: 100%;
+	height: 120px;
+	background: blue; /* para poder diagnosticar */
+
+
+	/* estilizando*/
+	color: white;
+	display: table; /* para compativilidad con otros navegadores no webkit*/
+	background: rgba(0,0,0,0.5);/* fondo de transparencia rgba */
+	background: black;
+	font-size: 10px;
+	text-decoration: none; /* quita la decoracion a el texto */
+	text-align: justify; /* texto justificado */
+
+	overflow: hidden; /* si se sale el texto de la caja se ocultara*/
+
+
+}
+
+#sobremi a{
+
+color: white;
+text-decoration: none; /* uitar la decoracion azul del hypervinculo y añadirle blanco */
+
+}
+
+/* personalizar el div que contiene la foto*/
+#mifoto{
+
+	width: 100px;
+	height: 100px;
+	font-family: opensans-bold;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+
+
+	/* estilizar*/
+
+	background: url(../photo/Pain-naruto-shippuden.jpg);
+	background-size: 100% 100%; /* x y*/
+	background-repeat: no-repeat;
+	display: box;
+
+	border:1px solid white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 0px 0px 10px white;
+
+	/* para que el texto se alinee con la foto.. para que la foto quede al lado de la letra*/
+
+
+	float: left;  /* el div mifoto se pondra a la izquierda del div de la seccion sobremi */
+	margin: 10px;	
+
+	
+	/* animacion a el div mifoto*/
+
+	animation:parpadeo 2s;
+	-webkit-animation:parpadeo 2s;
+	animation-iteration-count:infinite;
+	-webkit-animation-iteration-count:infinite;
+
+
+
+}
+
+/* ANIMACION DE LA IMAGEN.... */
+
+@-webkit-keyframes parpadeo {
+	0% { box-shadow: 0px 0px 10px white; }
+	50%{ box-shadow: 0px 0px 50px white; }
+	100% {box-shadow: 0px 0px 10px white;  }
+}
+@-moz-keyframes parpadeo {
+	0% { box-shadow: 0px 0px 10px white; }
+	50%{ box-shadow: 0px 0px 50px white; }
+	100% {box-shadow: 0px 0px 10px white;  }
+}
+@-ms-keyframes parpadeo {
+	0% { box-shadow: 0px 0px 10px white; }
+	50%{ box-shadow: 0px 0px 50px white; }
+	100% {box-shadow: 0px 0px 10px white;  }
+}
+@-o-keyframes parpadeo {
+	0% { box-shadow: 0px 0px 10px white; }
+	50%{ box-shadow: 0px 0px 50px white; }
+	100% {box-shadow: 0px 0px 10px white;  }
+}
+@keyframes parpadeo {
+	0% { box-shadow: 0px 0px 10px white; }
+	50%{ box-shadow: 0px 0px 50px white; }
+	100% {box-shadow: 0px 0px 10px white;  }
+}
+
+
+
+
+
+
+
+
+
+/* personalizando los articulos el fondo*/
+
+#logohack{
+
+	width: 100px;
+	height: 100px;
+	font-family: opensans-bold;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+
+
+	/* estilizar*/
+
+	background: url(../photo/logo_posts.png);
+	background-size: 100% 100%; /* x y*/
+	background-repeat: no-repeat;
+	display: box;
+
+	border:1px solid white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 0px 0px 10px white;
+
+	/* para que el texto se alinee con la foto.. para que la foto quede al lado de la letra*/
+
+
+	float: left;  /* el div mifoto se pondra a la izquierda del div de la seccion sobremi */
+	margin: 10px;	
+
+	/* configurar la posicion del logo a cada lado del post*/
+
+	position: absolute; /* esto ara que el texto quede pordebajo de la imagen*/
+	-webkit-transform: translate(-140px,0px);
+	   -moz-transform: translate(-140px,0px);
+	    -ms-transform: translate(-140px,0px);
+	     -o-transform: translate(-140px,0px);
+	        transform: translate(-140px,0px);
+
+
+}
+#youtube{
+
+	width: 100px;
+	height: 100px;
+	font-family: opensans-bold;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+
+
+	/* estilizar*/
+
+	background: url(../photo/logo_posts.png);
+	background-size: 100% 100%; /* x y*/
+	background-repeat: no-repeat;
+	display: box;
+
+	border:1px solid white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 0px 0px 10px white;
+
+	/* para que el texto se alinee con la foto.. para que la foto quede al lado de la letra*/
+
+
+	float: left;  /* el div mifoto se pondra a la izquierda del div de la seccion sobremi */
+	margin: 10px;	
+
+
+	/* configurar la posicion del logo a cada lado del post*/
+
+	position: absolute; /* esto ara que el texto quede pordebajo de la imagen*/
+	-webkit-transform: translate(-140px,0px);
+	   -moz-transform: translate(-140px,0px);
+	    -ms-transform: translate(-140px,0px);
+	     -o-transform: translate(-140px,0px);
+	        transform: translate(-140px,0px);
+}
+#musica{
+
+	width: 100px;
+	height: 100px;
+	font-family: opensans-bold;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+
+
+	/* estilizar*/
+
+	background: url(../photo/logo_posts.png);
+	background-size: 100% 100%; /* x y*/
+	background-repeat: no-repeat;
+	display: box;
+
+	border:1px solid white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 0px 0px 10px white;
+
+	/* para que el texto se alinee con la foto.. para que la foto quede al lado de la letra*/
+
+
+	float: left;  /* el div mifoto se pondra a la izquierda del div de la seccion sobremi */
+	margin: 10px;	
+
+	/* configurar la posicion del logo a cada lado del post*/
+
+	position: absolute; /* esto ara que el texto quede pordebajo de la imagen*/
+	-webkit-transform: translate(-140px,0px);
+	   -moz-transform: translate(-140px,0px);
+	    -ms-transform: translate(-140px,0px);
+	     -o-transform: translate(-140px,0px);
+	        transform: translate(-140px,0px);
+}
+
+
+#mifotoarticulo{
+
+	width: 100px;
+	height: 100px;
+	font-family: opensans-bold;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+
+
+	/* estilizar*/
+
+	background: url(../photo/logo_posts.png);
+	background-size: 100% 100%; /* x y*/
+	background-repeat: no-repeat;
+	display: box;
+
+	border:1px solid white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 0px 0px 10px white;
+
+	/* para que el texto se alinee con la foto.. para que la foto quede al lado de la letra*/
+
+
+	float: left;  /* el div mifoto se pondra a la izquierda del div de la seccion sobremi */
+	margin: 10px;	
+
+
+	/* configurar la posicion del logo a cada lado del post*/
+
+	position: absolute; /* esto ara que el texto quede pordebajo de la imagen*/
+	-webkit-transform: translate(-140px,0px);
+	   -moz-transform: translate(-140px,0px);
+	    -ms-transform: translate(-140px,0px);
+	     -o-transform: translate(-140px,0px);
+	        transform: translate(-140px,0px);
+}
+
+[required]{
+
+	border-color: green;
+	box-shadow: 0px 0px 5px green;
+
+
+}
+
+:invalid{
+
+	border-color: red;
+	box-shadow: 0px 0px 5px red;
+
+}
+
+form table{
+	
+	width: 100%;
+	border:0px solid white;
+	padding: 0px;
+	margin: auto;
+
+
+}
+
+form{
+	
+	font-family: opensans;
+	color: black;
+	text-shadow:3px 3px 5px rgba(0,0,0,0.5) ;
+	border:1px solid white;
+	border-radius: 0px 15px 0px 15px;
+	box-shadow: 10px 10px 25px rgba(0,0,0,0.5); /* 25 px de radio*/
+	background: rgba(255,255,255,0.5);
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+}
+
+
+form input, form textarea{
+	
+	font-family: opensans;
+	font-size: 10px;
+	background: rgba(255,255,255,0.5);
+	border:1px dotted white;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	border-radius: 0px 5px 0px 5px;
+
+}

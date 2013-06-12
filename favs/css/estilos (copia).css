@@ -1,0 +1,78 @@
+#logotipo{
+
+	
+	font-size: 0px;
+	float: left;
+	position: absolute; /* EL LOGOTIPO FLOTE POR ENSIMA DE TODO LO DEMAS*/
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#tipo{
+
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+	font-size: 48px;
+	color: rgba(255,255,255,1);  /* blanco y opaco...*/
+	text-shadow:2px 2px 5px rgba(0,0,0,0.5); /* negro semitrasparente*/
+
+
+	/* mover artificialmente a la derecha */
+
+	-webkit-transform: translate(150px,0px);
+	   -moz-transform: translate(150px,0px);
+	    -ms-transform: translate(150px,0px);
+	     -o-transform: translate(150px,0px);
+	        transform: translate(150px,0px);
+
+}
+
+
+#logo{
+
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 100%;
+	vertical-align: middle;
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+	animation:late 2s;
+	-webkit-transform: scale(1,1);/* logo crece al 200%*/
+	   -moz-transform: scale(1,1);/* logo crece al 200%*/
+	    -ms-transform: scale(1,1);/* logo crece al 200%*/
+	     -o-transform: scale(1,1);/* logo crece al 200%*/
+	        transform: scale(1,1);/* logo crece al 200%*/
+	-webkit-animation:late 2s;
+
+	-webkit-animation-iteration-count:2;
+	
+
+
+}
+
+
+@@-webkit-keyframes late {
+	0% { -webkit-transform: scale(1,1); }
+	50% { -webkit-transform: scale(1.2,1.2);}
+	100% { -webkit-transform: scale(1,1);  }
+}
+@-moz-keyframes late {
+	0% {  }
+	100% {  }
+}
+@-ms-keyframes late {
+	0% {  }
+	100% {  }
+}
+@-o-keyframes late {
+	0% {  }
+	100% {  }
+}
+@keyframes late {
+	0% {  }
+	100% {  }
+}

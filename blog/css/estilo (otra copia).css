@@ -1,0 +1,244 @@
+/* fuentes personalizadas*/
+
+@font-face{
+
+font-family: opensans-bold;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Bold.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Italic.ttf) format("truetype");
+
+
+}
+@font-face{
+
+font-family: opensans-bold-italic;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-BoldItalic.ttf) format("truetype");
+
+
+}
+
+@font-face{
+
+font-family: opensans;/* nombre que yo le quiero dar a la fuente*/
+src:url(fuentes/OpenSans-Regular.ttf) format("truetype");
+
+
+}
+
+
+
+
+/* estilos basicos */
+
+h1,h2,h3,h4,h5,h6{
+
+font-family:opensans-bold;
+
+
+}
+
+h1,h2{
+
+-webkit-transform: translate:(150px 0px);
+   -moz-transform: translate:(150px 0px);
+    -ms-transform: translate:(150px 0px);
+     -o-transform: translate:(150px 0px);
+        transform: translate:(150px 0px);
+
+position: relative;
+color: white;
+font-size: 32px;
+top: -20%;  /* un margen a nivel superior de -20%*/
+margin-top: 10px;
+letter-spacing: 0px;
+display: inline;
+}
+
+
+p{
+	font-family: opensans;
+}
+
+
+/* MENU DE NAVEGACION*/
+
+nav{
+	
+	display: inline;
+	float: left;
+	margin: 20px;
+
+
+}
+
+/* en los menus de navegacion incontremos una lista no ordenada*/
+nav ul{
+
+font-size: 12px;
+padding: 0px;
+margin: 0px;
+background-color: gray;
+color: white;
+width: 50%;
+font-family: opensans;
+position: relative;
+display: inline;
+}
+
+nav ul li{
+
+display: inline; /* enves de estar uno ensima de otros, estan uno al lado de otros*/
+text-align: center;
+}
+
+nav ul li a{
+
+background: gray;
+color: white;
+text-decoration: none; /* asi eliminamos los puntos de la lista  */
+float: right;
+border:1px solid white;
+border-radius: 0px 10px 0px 10px;
+box-shadow: 0px 0px 5px white;
+
+}
+
+/* ponemos el raton ensima de el*/
+nav ul li a:hover{
+
+background: white;
+color: black;
+box-shadow: 0px 0px 25px white; /* aumentamos el resplandor cuando pasamos sobre el */
+
+}
+
+
+
+
+
+
+
+/* maquetacion principal */
+
+
+body{
+
+text-align: center;
+margin: 0px; /* eliminando margen por defecto*/
+background: lightgray;
+
+
+}
+
+#all{  /* margin ... osea al div que tiene todo ... TODO */
+
+text-align: left;  /* todo el texto se alineara a la izquierad*/
+margin: auto; /* todo el contenido se centrara en la pantalla*/
+width: 80%;
+height: 100%;
+background: gray;
+position: relative;
+
+}
+
+ 
+#cajaheader{
+
+width: 100%;
+height: 100px;
+position: absolute;
+background: darkgray;
+
+
+}
+
+header{
+display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+margin: auto;
+text-align: left;
+width: 100%;  /* esto se ajusta al 100% que le deje all el div que lo contiene todo*/
+height: 100%;
+background: darkgray;
+overflow: hidden;  /* todo lo que sobresalga del header se ocultara */
+
+border:2px solid white;
+
+
+/* agregar compavilidad */
+
+border-radius: 5px 35px 0px 0px;
+box-shadow: 0px 0px 10px white; /* 10 pixeles de resplandor */
+
+
+
+}
+
+
+#logo{
+	
+width: 100px;
+height: 100px;
+display: inline;
+position: relative;
+
+
+
+}
+
+
+footer{
+	display: table;/* automenta la compativilidad con navegadores basados en mozilla y opera*/
+	margin:auto;
+	text-align: center;  /* texto alineado al centro en los pies de pagina... bastante comun*/
+	width: 100%;
+	background: darkgray;
+   /* estilizando*/
+	border:1px solid white;
+	border-radius: 0px 0px 5px 35px;
+
+	box-shadow: 0px 0px 10px white;  /* 10 px de resplandor*/
+}
+
+
+/* CONTENIDO POST ARTICLE Y ASIDE (TANGENCIAL)*/
+
+#post{
+
+width: 100%;
+/* estilizando*/
+border:1px solid white;
+border-radius: 0px 0px 5px 35px;
+box-shadow: 0px 0px 10px white;  /* 10 px de resplandor*/
+
+}
+
+
+article{
+
+width: 50%;
+background: white;
+}
+
+aside{
+	float: right; /* flotar a la derecha*/
+	display: inline-table;
+	width: 40%;
+	background: white; /* fondo blanco para diagnosticar */
+
+
+}
+
+#sobremi{
+	
+	width: 100%;
+	height: 100%;
+	background: blue; /* para poder diagnosticar */
+
+
+}
+

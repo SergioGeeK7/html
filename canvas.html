@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+
+
+<canvas id='miprimercanvas' width='400px' height='400px' style='border: 2px solid black;'>
+	
+Tu navegador no soporta canvas
+
+
+</canvas>
+
+
+<script type='text/javascript'>
+
+// dibujaremos con javascript
+
+var c = document.getElementById('miprimercanvas' );  // seleccionar el canvas ya creado
+
+var cxt= c.getContext('2d'); // coger el contexto y trabajar en dos dimenciones
+
+cxt.fillStyle="Red";  // lo que sea que haga se rellenara rojo
+cxt.fillRect(10,10,100,50);  // creara un rectangulo
+
+
+</script>
+
+
+
+
+
+
+
+	
+</body>
+</html>
