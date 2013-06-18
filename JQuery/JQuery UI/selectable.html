@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- CARGAR ARCHIVOS DE JQUERY JQUERY UI ARCHIVO JS Y CSS DE JQUERY UI -->
+	<script type='text/javascript' src='jquery/jquery-1.9.1.js'></script>
+	<script type='text/javascript' src='jquery/jqueryui.js'></script>
+	<script type='text/javascript' src='js/selectable.js'></script>
+           <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css" /> 
+	<!-- <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css"/> -->
+	<meta charset="UTF-8">
+	<title>Elementos Seleccionados en JQuery</title>
+</head>
+
+<style type='text/css'>
+	
+	ul{
+		list-style-type: none;
+
+	}
+	li{
+		border: 1px solid gray;
+		width: 500px;
+		height: 30px;
+	}
+
+	ul .ui-selecting{
+		background: yellow;
+
+	}
+
+	ul .ui-selected{
+		background: red;
+	}
+
+</style>
+
+
+<body>
+	<ul id="seleccionable">
+		<li>Manzanas</li>
+		<li>Peras</li>
+		<li>Platanos</li>
+		<li>Naranjas</li>
+		<li>Sandias</li>
+	</ul>
+</body>
+</html>
