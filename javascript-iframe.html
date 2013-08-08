@@ -1,0 +1,31 @@
+<!-- <html>
+<head>
+<script language="javascript">
+function crearframe(  ) {
+    var testframe = document.createElement("iframe");
+    testframe.id = "testframe";
+    testframe.src = "https://www.facebook.com";
+    testframe.width=400;
+    testframe.height=400;
+    document.body.appendChild(testframe);
+}
+</script>
+</head>
+<body>
+<p><input type="button" name="Submit" value="cargar"  onclick="crearframe()"/></p>
+</body>
+</html> -->
+
+<script type="text/javascript">
+
+function crece() {
+
+  document.getElementById("ifrm").height =
+document.getElementById("ifrm").document.body.scrollHeight;
+ document.getElementById("ifrm").height =
+document.getElementById("ifrm").contentWindow.document.body.scrollHeight;
+}
+</script>
+
+<iframe name="contenedor" id="ifrm" frameborder="0" onload="crece()" width="820" scrolling="no"
+ src="http://google.com" ></iframe>

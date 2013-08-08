@@ -9,4 +9,11 @@ function inicio (){
 	x.resizable();
 	//x.draggable();
 	//$( "#grande" ).resizable();
+
+   
+
+
+
+
+
 }

@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+
+function cambiar (){
+
+	//var object2 = document.getElementsByTagName("input")[0]; 
+	var object2 = document.getElementsByTagName("input"); 
+
+	for (var i = 0; i < object2.length; i++) {
+
+		var es = object2[i].parentNode;
+		
+		//console.log(es.id);
+		//console.log(es.name);
+		if (es.classList.contains("r0") || es.classList.contains("r1") ) {
+
+			object2[i].setAttribute('type','checkbox');
+		};
+
+		
+	};
+
+    
+}
+	</script>
+</head>
+<body>
+
+	<div class='r1'>
+	<label>hola </label>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+	<input type='radio' id='aaa'>
+
+	<button onclick='cambiar();'>lalalala</button>
+	</div>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ <html>
+<head>
+
+http://quinqui-bitacorita.blogspot.com/2011/06/prog-funcion-javascript-para-obtener.html
+http://www.maestrosdelweb.com/editorial/diez-funciones-imprescindibles-en-javascript/
+http://mundogeek.net/archivos/2004/08/19/javascript-accediendo-a-los-elementos-del-arbol-de-documento/+
+http://programmingheroes.blogspot.com/2012/09/modificar-clases-css-html-javascript-classlist.html
+
+
+<title></title>
+<script>
+var aBotonClick = [];
+var fclick = function() { 
+for(var i=0; i<aBotonClick.length; i++) aBotonClick[i]();
+} 
+
+aBotonClick[aBotonClick.length]= function(){
+alert("primera")
+}
+aBotonClick[aBotonClick.length]= function(){
+alert("segunda")
+}
+</script>
+
+</head>
+<body>
+<input type="button" id="boton" />
+<script type="text/javascript">
+document.getElementById('boton').onclick = fclick;
+</script>
+</body>
+</html> -->
