@@ -1,0 +1,90 @@
+<html>
+<head>
+
+<title></title>
+	<!-- CDN DE JQuery -->
+	<!-- <meta name='viewport' content='width-device-width,user-scalable=no' /> -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+	
+	$(document).bind('mobileinit', function (){
+
+		setTimeout(function (){
+			// medoto de mobile que permite cambiar de pagina
+			$.mobile.changePage('#page2',{
+				reverse:true,
+				showLoadMsg:false,
+				transition: 'slideup',
+				type:'POST' // hacer un pedido post
+				data://atravez del atributo data (this) pasar un objeto de JQuery cambiar una pagina enviando valores por post
+			});		// el id o la url de la pagina externa
+
+		},2000);
+
+		// BUSCAR EN LA API DE JQuery Mobile
+	});
+	
+
+
+</script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+
+
+	<div data-role='page' id='page1'>
+
+		<div data-role='header'>
+		<p>Aplicacion JQuery Mobile</p>
+		</div>
+
+
+
+		<div data-role='content'>
+		
+		
+
+		<p>PAGINA 1</p>
+
+
+			
+
+		</div>
+
+
+		<div data-role='footer'>
+		<p>For Sergio.tk<p>
+		</div>
+	</div>
+
+
+
+		<div data-role='page' id='page2'>
+
+		<div data-role='header'>
+		<p>Aplicacion JQuery Mobile</p>
+		</div>
+
+
+
+		<div data-role='content'>
+		
+		
+
+		<p>PAGINA 2</p>
+
+
+			
+
+		</div>
+
+
+		<div data-role='footer'>
+		<p>For Sergio.tk<p>
+		</div>
+	</div>
+
+</body>
+</html>

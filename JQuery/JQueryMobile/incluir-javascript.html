@@ -1,0 +1,191 @@
+<html>
+<head>
+
+<title></title>
+	<!-- CDN DE JQuery -->
+	<!-- <meta name='viewport' content='width-device-width,user-scalable=no' /> -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+	
+	// evento cuando JQuery mobile ya esta funcionando
+	$(document).bind('mobileinit',function (){
+		// este es nuestro codigo de inicio para JQuery Mobile
+
+		$.mobile.ajaxEnabled = false; // ninguna transicion de ajax
+		$.mobile.defaultPageTransition = 'slideUp'; // transicion por default
+		$.mobile.defaultDialogTransition = 'flip';
+		$.mobile.loadingMessage = 'Por favor espere... ';
+		$.mobile.pageLoadErrorMessage = 'no se ha podido cargar la pagina';
+
+
+		// dento aqui otro evento que le sigue o le puede seguir para cuando el user toca y suelta rapido
+		$('zona').bind('tap',function (){
+			// top tocar con el dedo una zona en la pantalla
+			// evento tocar y soltar rapido
+
+		});
+		$('zona').bind('taphold',function (){
+			// tocar y dejar precionado
+
+		});
+		$('zona').bind('swipeleft',function (){
+			// desliza ala izquierda
+
+		});
+		$('zona').bind('swiperight',function (){
+			// desliza ala derecha
+		});
+
+
+		// EVENTOS DE MOUSE VIRTUALES
+
+		$('zona').bind('vclick',function (){
+			//  TODOS LOS EVENTOS DEL MOUSE NORMAL PERO CON JQM MAS UNA V
+
+		});
+
+
+		// EVENTOS DE ORIENTACION
+
+		$(document).bind('orientationchange',function (){
+
+
+
+		});
+
+		// eventos de scroll
+
+		$(document).bind('scrollstart',function (){
+
+
+
+		});
+
+		$(document).bind('scrollstop',function (){
+
+
+
+		});
+
+
+		// EVENTOS DE PAGINA... CUANDO SE CARGO
+
+		$(document).bind('pageinit',function (){
+
+
+
+		});
+
+		// EVENTOS DE PAGINA EXTERNA.. (CARGANDO VIA AJAX)
+
+		$(document).bind('pageload',function (){
+
+
+
+		});
+
+		$(document).bind('beforeload',function (){
+
+
+
+		});
+
+		$(document).bind('pageloadfail',function (){
+
+
+
+		});
+
+		// esta por pasar de una pagina a la otra
+
+		$('pagina1').bind('pagebeforechange',function (){
+
+
+		});
+
+		$('pagina1').bind('pagechange',function (){
+			// luego de que se cambio
+
+		});
+
+		$('pagina1').bind('pagebeforechange',function (){
+
+
+		});
+
+		// antes de que se muestre la siguiente pagina
+
+		$('pagina1').bind('pagebeforeshow',function (){
+
+
+		});
+
+		$('pagina1').bind('pageshow',function (){
+			// mostrando la pagina
+
+		});
+
+		$('pagina1').bind('pagehide',function (){
+			// mostrando la pagina
+
+		});
+
+		$('pagina1').bind('pagebeforehide',function (){
+			// antes de esta pagina desaparezca
+
+		});
+
+		$('pagina1').bind('pageremove',function (){
+			//  quita paginas fuera de la visivilidad del usuario
+
+		});
+
+			// eventos de layout
+		$('pagina1').bind('updatelayout',function (){
+			//  se actualizo el diseño de la pagina
+
+		});
+		$('pagina1').bind('animationComplete',function (){
+			//  se actualizo el diseño de la pagina
+
+		});
+
+
+	});
+
+
+</script>
+
+<!-- TIIENE QUE SER EN LA MITAD DE LOS TOD YA QUE SIN JQUERY NO TIENE LA FUNCION BIND Y CON JQUERY MOBILE ANTES.. YA HABRA PASADO EL EVENTO MOBILEINIT -->
+
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+
+
+	<div data-role='page'>
+
+		<div data-role='header'>
+		<p>Aplicacion JQuery Mobile</p>
+		</div>
+
+
+
+		<div data-role='content'>
+		
+		
+			
+
+		</div>
+
+
+		<div data-role='footer'>
+		<p>For Sergio.tk<p>
+		</div>
+	</div>
+
+
+</body>
+</html>
