@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON whith Javascript</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<script>
+
+
+	function cool (){
+	
+	var URL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=exito+de+robledo&sensor=false&location=6.235925,-75.575137&radius=18.000&key=AIzaSyCyq7iBuJvRhcAJ4KbTeOf9g8JQJY9J_QA&callback=jyrtyrty'	;
+
+			$.ajax({
+	        url: URL,
+	        dataType: 'json',
+	        jsonpCallback: 'jyrtyrty',
+	        jsonp: 'callback',
+	    		});
+			
+	function jyrtyrty (data) {
+	    
+		var divRespuesta=document.getElementById('div');
+	divRespuesta.innerHTML= objetoJson.results[0].geometry.location.lat + " " + objetoJson.results[0].geometry.location.lng;
+
+
+	};
+
+
+
+
+		
+	
+	}
+
+	
+
+
+
+
+
+	</script>
+
+<!-- 
+	<script type="text/javascript" src='https://maps.googleapis.com/maps/api/place/textsearch/json?query=exito+de+robledo&sensor=false&location=6.235925,-75.575137&radius=18.000&key=AIzaSyCyq7iBuJvRhcAJ4KbTeOf9g8JQJY9J_QA&callback=jyrtyrty'></script>
+ -->
+	
+</head>
+
+
+<body onload='cool()'>
+	
+	<div id="div"></div>
+
+
+
+</body>
+</html>

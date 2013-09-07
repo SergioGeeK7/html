@@ -1,23 +1,22 @@
-var x;
-x=$(document);// COJO TODO EL DOCUMENTO
-x.ready(inicio);
+			var x;
+		x=$(document);// COJO TODO EL DOCUMENTO
+			x.ready(inicio);
 
-function inicio (){
+		function inicio (){
 
-	var x;
-	x=$('#hola');
-	x.mousedown(presionar);  // cuando pulse el boton del raton
-	x.mouseup(soltar);
-}
+				var x;
+				x=$('#hola');
+				x.mousedown(presionar);  // cuando pulse el boton del raton
+				x.mouseup(soltar);
+		}
+			function presionar (){
 
-function presionar (){
+			$(this).css('background-color','red');
 
-$(this).css('background-color','red');
+			}
 
-}
+			function soltar () {
 
-function soltar () {
+			$(this).css('background-color','blue');
 
-$(this).css('background-color','blue');
-
-}
+		}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(document).on("ready",inicio);
+		function inicio(){
+			var men=$("#mensaje");
+			men.text("localizando a mi novia!");
+			setTimeout(localizar,3000);
+
+			function localizar(){
+				navigator.geolocation.getCurrentPosition(mostrar,error);
+			}
+			function error(){
+				men.text("hubo un error de localiza....");
+			}
+			function mostrar(datos){
+				var lat=datos.coords.latitude;
+				var lon=datos.coords.longitude;
+				men.text("latitud: "+lat+" longitud: "+lon);
+				var ubicacion=new google.maps.LatLng(6.272637, -75.593247);
+
+				var opcionesmapa={
+					center:ubicacion,
+					zoom:17,
+					mapTypeId:google.maps.MapTypeId.SATELLITE
+				}
+				var mapa=new google.maps.Map($("#mimapa")[0],opcionesmapa);
+
+				var opcionespuntero={
+					position:ubicacion,
+					map:mapa,
+					title:"localzando a la novia"
+				}
+				var puntero=new google.maps.Marker(opcionespuntero);
+			}
+		}
+	</script>
+	<meta charset="utf-8" />
+	<title>localización</title>
+	<style type="text/css">
+		#mimapa{
+			height:450px;
+			margin:0 auto;
+			width:550px;
+		}
+	</style>
+</head>
+<body>
+	<p id="mensaje"></p>
+	<div id="mimapa"></div>
+	<a href="https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Sydney&sensor=true&key=AIzaSyDJswsSNB2mjvJerZDT-OCNRsgOeH2p7ro">dfgdfg</a>
+</body>
+</html>

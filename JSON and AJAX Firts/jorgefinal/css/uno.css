@@ -1,0 +1,18 @@
+input:focus{
+border: 2px solid red;
+background-color: #FEFC9B;
+}
+
+input:hover{
+border: 2px solid blue;
+}
+
+#error{
+color:red;
+font-size:18;
+}
+
+#respuesta{
+color:blue;
+font-size:14;
+}

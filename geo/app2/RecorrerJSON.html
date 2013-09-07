@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON whith Javascript</title>
+	<script>
+
+
+
+
+	function go () {
+
+	var divRespuesta = document.getElementById('div')
+	peticion=new XMLHttpRequest();
+	peticion.open("GET", "Ejem.json", "true");
+	peticion.send();
+
+	peticion.onreadystatechange=function(){
+
+		if(peticion.readyState==4 && peticion.status==200){
+
+		var objetoJson = JSON.parse(peticion.responseText);
+		
+		divRespuesta.innerHTML= objetoJson.results[0].geometry.location.lat + " " + objetoJson.results[0].geometry.location.lng;
+
+		// LAS PROPIEDADES SON CON . 
+		// SI ES UN ARRAY INDICAR EL INDICE Y LUEGO SEGUIR CON (.) SI ES PROPIEDAD[0].PROPIEDAD
+
+
+		// RECORDAR QUE A LOS OBJETOS SE LE PUEDE ACCEDER A LA PROPIEDAD UTILIZANDO
+		//datos[clave] // DINAMICA  		
+		//datos["clave"] // NORMAL
+
+		/* for (var clave in datos) {
+                  if (datos.hasOwnProperty(clave)) {
+                      alert(clave + " -> " + datos[clave]);
+                  }
+                }*/
+
+
+		}
+
+	}
+
+		
+	}
+
+
+
+
+
+	</script>
+</head>
+
+
+<body onload='go()'>
+	
+	<div id="div"></div>
+
+
+
+</body>
+</html>

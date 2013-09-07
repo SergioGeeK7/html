@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta charset="utf-8">
+<style>
+html, body, #map_canvas {                
+  height: 100%;
+}
+</style>
+<title>Detectar Longitud y Latitud en Google Maps v3</title>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+
+      //http://lineadecodigo.com/google/detectar-la-longitud-y-latitud-sobre-un-mapa-de-google-maps/
+
+      //http://www.nahuelsanchez.com/219/obtener-las-coordenadas-de-un-punto-en-un-mapa-creado-con-la-api-de-google-maps/
+
+      //http://www.nahuelsanchez.com/204/obtener-las-coordenadas-de-un-punto-en-google-maps/
+
+      //http://code-tutor.appspot.com/maps_api#32
+
+      //https://code.google.com/apis/console/#project:483193086167:access
+
+
+
+
+
+      // RECIVIR JSON Y ACEPTAR CON AJAX ASYNCRONUS JAVASCRIPT XML 
+
+      //http://www.funcion13.com/2012/01/29/introduccion-a-las-peticiones-ajax-en-jquery/
+
+      //http://www.hcosta.info/wp/2011/11/procesar-json-en-peticion-ajax-a-php-con-jquery-y-videotutorial/
+
+      //http://blog.openalfa.com/como-leer-ficheros-json-en-javascript/
+
+
+
+
+
+
+      // error al pedir json en otro dominio
+      //Échale un vistazo a cross-domain ajax requests
+
+      //http://james.padolsey.com/javascript/cross-domain-requests-with-jquery/
+      //http://remysharp.com/2007/10/08/what-is-jsonp/
+
+
+
+        var map;
+        function initialize(){  
+                
+                
+                var myLatlng = new google.maps.LatLng(40.674389,-4.700432);
+                var mapOptions = {
+                          zoom: 12,
+                          center: myLatlng,
+                          mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                                        
+                map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);           
+                
+                google.maps.event.addListener(map, 'click', function(event) {
+                        document.getElementById("posicion").innerHTML = event.latLng;               
+                  });
+
+           
+        }
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+</head>
+<body>
+
+<h1>Detectar Longitud y Latitud en Google Maps v3</h1>
+<div id="map_canvas" style="width: 50%; height: 50%"></div>
+Posicion: <span id="posicion"></span>
+
+<br/><br/>
+<hr>
+Art&iacute;culo disponible en: <a href="http://lineadecodigo.com/google/detectar-la-longitud-y-latitud-sobre-un-mapa-de-google-maps/">http://lineadecodigo.com/google/detectar-la-longitud-y-latitud-sobre-un-mapa-de-google-maps/</a><br/>
+<a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+
+
+</body>
+</html>

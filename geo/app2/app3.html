@@ -1,0 +1,84 @@
+ <!doctype html>
+<html lang="en">
+<head>
+  
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script>
+
+function initialize() {
+    var myOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(-34.397, 150.644),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+
+
+
+    for (var i = 0; i < 5; ++i) {
+
+    var infowindowOptions = {
+      position: new google.maps.LatLng(-34.397, 150.644),
+      content: 'Marker #'+i
+    };
+    var infowindow = new google.maps.InfoWindow(infowindowOptions);
+
+
+      var markerOptions = {
+        position: new google.maps.LatLng(-34.397, 149.5 + 0.5 * i)
+      };
+      var marker = new google.maps.Marker(markerOptions);
+
+      marker.setMap(map);
+      //infowindow.content='Marcador #'+i; ESTA PASANDO LO MISMO TOMA EL ULTIMO VALOR 4 DE LA I
+      lala(marker,map,infowindow,i);
+      
+      
+    }
+
+      }
+
+ 
+
+
+    function lala (marker,map,infowindow,i){
+
+      // Opens info window when marker is clicked.
+      // SI NO LO HAGO AFUERA SIEMPRE LLAMARA A EL MISMO LISTENER EVENTO CON EL ULTIMO MARKER QUE FUE PASADO COMO PARAMETRO, AQUI ENTONCES LE HAGO A CADA MARKER POR SEPARADO CON EL LISTENER
+      // ASI REPETIRA SOLO LA FUNCION Y LA FUNCION ARA SU TRABAJO LLAMANDO UNA Y OTRA VEZ A CADA LISTENER
+
+      
+      google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map, marker);
+      });
+    }
+
+ 
+
+
+
+
+  </script>
+
+  <style>
+  #map_canvas{
+    width: 900px;
+    height: 700px;
+    display: block;
+  }
+  </style>
+
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body onload='initialize()'>
+  
+
+<div id="map_canvas"></div>
+
+</body>
+</html> 
+

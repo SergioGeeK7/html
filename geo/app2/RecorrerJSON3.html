@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JQuery (cross-domain) JSONP Twitter example</title>
+        <script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.getJSON('https://maps.googleapis.com/maps/api/place/textsearch/json?query=exito+de+robledo&sensor=false&location=6.235925,-75.575137&radius=18.000&key=AIzaSyCyq7iBuJvRhcAJ4KbTeOf9g8JQJY9J_QA&callback=?', function(data){
+                    $.each(data, function(i, tweet){
+                        $('#tweets').append('<li>' + tweet.text + '</li>');
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="tweets"></ul>
+    </body>
+</html>
