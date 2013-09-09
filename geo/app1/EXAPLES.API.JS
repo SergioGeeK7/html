@@ -137,7 +137,7 @@ var json = '{"key": "value", "an_array": [1, 2, 3]}';
 
 var object = JSON.parse(json);
 window.console.log(object.key);
-window.console.log(object.an_array);
+window.console.log(object.an_array[any]);
 
 //------------------------------------------------------------------
 //GUIADA DE LA API DE GOOGLE PLUS

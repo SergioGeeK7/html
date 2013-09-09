@@ -41,5 +41,8 @@
 		);
 	} else {
 		divMapa.innerHTML='Su navegador no soporta la Geolocalización de HTML5';
+
+
+
 	}
 })();
