@@ -126,6 +126,8 @@
 		//google maps icons
 		//32 x 32 pixels or smaller
 		//http://mapicons.nicolasmollet.com/
+		//filtrar select con javascript
+		//http://stackoverflow.com/questions/1447728/how-to-dynamic-filter-options-of-select-with-jquery
 
 		function marks(lat,lon,message,image){
 			// animation null

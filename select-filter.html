@@ -1,0 +1,109 @@
+<!-- <html> 
+ <head> 
+  <script language="JavaScript"> 
+ 
+   var i; 
+ 
+   function addOpt(oCntrl, sTxt, sVal, sCnd){ 
+    if (sTxt.substr(0, sCnd.length).toUpperCase() == sCnd.toUpperCase()){ 
+     var selOpcion=new Option(sTxt, sVal); 
+     eval(oCntrl.options[i++]=selOpcion); 
+    } 
+   } 
+ 
+   function cambia(oCntrl){ 
+    var txtVal = document.frm.txt.value; 
+    while(oCntrl.length > 0) oCntrl.options[0]=null; 
+    i = 0; 
+    oCntrl.clear; 
+    addOpt(oCntrl,  "Ciudad de Mexico", "0", txtVal); 
+    addOpt(oCntrl,  "Ciudad de Panamá", "0", txtVal); 
+    addOpt(oCntrl,  "Ciudad de Guatemala", "0", txtVal); 
+    addOpt(oCntrl,  "Caracas", "0", txtVal); 
+    addOpt(oCntrl,  "Cancún", "0", txtVal); 
+    addOpt(oCntrl,  "Maracay", "0", txtVal); 
+    addOpt(oCntrl,  "Maracaibo", "0", txtVal); 
+    addOpt(oCntrl,  "Zaragoza", "0", txtVal); 
+   } 
+  </script> 
+ </head> 
+ <body onload="cambia(document.frm.ciudad)"> 
+  <form name="frm"> 
+   <table border="0"> 
+    <tr> 
+     <td> 
+      Ciudad: 
+     </td> 
+     <td> 
+      <input type="text" name="txt" onkeyup="cambia(document.frm.ciudad)"> 
+     </td> 
+     <td> 
+      <select name="ciudad"> 
+      </select> 
+     </td> 
+    </tr> 
+   </table> 
+  </form> 
+ </body> 
+</html>  --> 
+<!-- http://tech.gluga.com/2009/07/javascript-selectlist-box-filter.html -->
+<!-- http://www.todoexpertos.com/categorias/tecnologia-e-internet/desarrollo-de-sitios-web/javascript/respuestas/2666722/filtrar-desde-un-text-un-select-multiple -->
+
+<html> 
+<head> 
+<script src="http://code.jquery.com/jquery-1.5.js"></script> 
+<script> 
+var paisesHidden; 
+$(document).ready(function(){ 
+$('#buscadorPaises').bind('keypress', function(e){ 
+var inicio = $('#buscadorPaises').val() + String.fromCharCode(e.keyCode); 
+actualizaLista(inicio); 
+}); 
+$('#buscadorPaises').bind('keydown', function(e){ 
+switch (e.keyCode){ 
+case 8: 
+var actual = $('#buscadorPaises').val(); 
+if (actual){ 
+var inicio =  actual.substr(0,actual.length-1); 
+actualizaLista(inicio); 
+} 
+break; 
+} 
+}); 
+paisesHidden = $('#selectorPaisesHidden'); 
+$('#selectorPaises').html(paisesHidden.html()); 
+}); 
+function actualizaLista(inicio){ 
+var paises = paisesHidden.clone(); 
+inicio = inicio.toLowerCase(); 
+$('#selectorPaises').html(''); 
+paises.find('option[title^="' + inicio + '"]').each(function(){ 
+$('#selectorPaises').append($(this)); 
+$(this).bind('click', function(){ 
+document.location.href = $(this).attr('url'); 
+}); 
+}); 
+} 
+function clickEnlace(url){ 
+} 
+</script> 
+</head> 
+<body> 
+<input type="text" id="buscadorPaises"></input> 
+<br/> 
+<select id="selectorPaises" multiple="multiple"> 
+</select> 
+<div id="paisesHidden" style="display:none"> 
+<select id="selectorPaisesHidden" multiple="multiple"> 
+<option id="chile" value="chile" title="chile" url="http://www.chile.com" onclick="clickEnlace(this)">Chile</option> 
+<option id="colombia" value="colombia" title="colombia" url="http://www.colombia.com" onclick="clickEnlace(this)">Colombia</option> 
+<option id="españa" value="españa" title="españa" url="http://www.españa.com" onclick="clickEnlace(this)">España</option> 
+<option id="venezuela" value="venezuela" title="venezuela" url="http://www.venezuela.com" onclick="clickEnlace(this)">Venezuela</option> 
+</select> 
+</div> 
+</body> 
+</html> 
+<!-- http://dragonfruitdevelopment.com/filter-a-select-menu-with-jquery/  MEJOR -->
+<!-- http://www.jquery4u.com/plugins/10-jquery-selectboxdrop-down-plugins/ -->
+<!-- https://github.com/dcparker/jquery_plugins/tree/master/quickselect -->
+<!-- http://tympanus.net/codrops/2010/07/14/ui-elements-search-box/ -->
