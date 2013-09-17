@@ -13,6 +13,7 @@
 			function mostrar(datos){
 				var lat=datos.coords.latitude;
 				var lon=datos.coords.longitude;
+				//var ubicacion=new google.maps.LatLng(lat,lon);
 				var ubicacion=new google.maps.LatLng(lat,lon);
 				var opcionesmapa={
 					center:ubicacion,
@@ -26,7 +27,7 @@
 
 				 google.maps.event.addListener(mapa, "click", function(evento) {
 			     // Obtengo las coordenadas coomo objeto latLng || evento.latLng
-			     
+			     $("#mensaje").text(evento.latLng.lat()+","+evento.latLng.lng());
 			     		if (typeof(puntero)=='undefined') {
 
 			     			puntero=new google.maps.Marker({
@@ -50,7 +51,7 @@
 			     		puntero.setPosition(evento.latLng);	
 
 			     		
-			     		$("#mensaje").text(evento.latLng.lat , evento.latLng.lon);
+			     		
 
 			     		
 
@@ -62,23 +63,67 @@
 
 
 				 // FILTRO
-				 var campo = $("#filtro");
-				 campo.keypress(function (){
-
-				 	console.log(campo.val());
+				 //var campo = $("#filtro");
 
 
 
-				 	// UNA VEZ CARGADOS LOS DATOS DEL PHP
-				 	var places = ["espacio publico", "calle palace cr 50", "pasaje la bastilla", "junin calle", "ayacucho 49", "la oriental", "la playa", "pasaje la candelaria", "el hueco", "la plaza botero", "calle 50  avenida colombia"]; 
 
-					campo.autocomplete({
-						source:places,
-						delay: 30
-					});
+				 $.ajax({
+								    url: 'managetables.php',
+								    type: 'POST',
+								    dataType: 'json',
+								    error: function (error){console.log(error);},
+								    success: function(datos){
+								    	var places = new Array();
+								         for(var i in datos){
+
+								         	places.push(datos[i].nombre);
+
+								         }
+								         
+
+								    	$('#filtro').autocomplete({
+											source:places,
+											delay: 30,
+											select:cargarVen
+								     	});
+								    }
+								});
 
 
-				 });
+				 	// CARGAR LOS VENDEDORES DE LA DB
+				 	function cargarVen ( event, ui ) {
+								
+								$.ajax({
+								    url: 'recivirpeticion.php',
+								    data: {
+								    		peticion:ui.item.value
+								        },
+								    type: 'POST',
+								    dataType: 'json',
+								    error: function (error){console.log(error);},
+								    success: function(datos){
+								         $('#mensaje').text(JSON.stringify(datos, null, 4));
+								         // DIBUJAR LOS MARKERS
+
+								         // FOR PAR DIBUJAR
+								         for(var i in datos){
+
+								         	// llamar a marks2 -- hasta que ya y hago una markers generica
+
+								         	//datos[i].cedula
+								         	//datos[i].nombre
+
+								         }
+
+
+								    }
+								});
+
+
+						}
+
+				 	
 
 				 
 
@@ -99,6 +144,7 @@
 						// FILL FIGURA PLACES... OPTIMIZAZR CON FUNCION 
 						 
 							var arraycoords = [
+							
 						    new google.maps.LatLng(6.2725405536501295,-75.59385001659393),
 						    new google.maps.LatLng(6.272679193524716 ,-75.59412896633148),
 						    new google.maps.LatLng(6.272983134659233 ,-75.59423089027405),
@@ -153,9 +199,35 @@
 
 	}
 
+
+			function marks2(lat,lon,message,image){
+			// animation null
+		var ubicacion=new google.maps.LatLng(lat,lon);
+		var puntero=new google.maps.Marker({
+						position:ubicacion,
+						map:mapa,
+						animation: google.maps.Animation.DROP,
+						icon:image
+						});
+
+
+
+		  var infowindow = new google.maps.InfoWindow({
+				    content: message
+				});
+
+			infowindow.open(mapa,puntero);
+
+			google.maps.event.addListener(puntero, 'click', function() {
+			infowindow.open(mapa,puntero);
+			});
+
+	}
+
+
+
+
 	function fillPlace (arraycoords){
-
-
 
 						var bermudaTriangle = new google.maps.Polygon({
 						    paths: arraycoords,

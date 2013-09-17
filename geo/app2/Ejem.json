@@ -1,76 +1,22 @@
-{
-   "debug_info" : [],
-   "html_attributions" : [],
-   "results" : [
-      {
-         "formatted_address" : "Carrera 80A, Medellín, Antioquia, Colombia",
-         "geometry" : {
-            "location" : {
-               "lat" : 6.273,
-               "lng" : -75.59394
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/fitness-71.png",
-         "id" : "54fc649c0c2eacc46d1b1546c77d4d648e17bd79",
-         "name" : "Bodytech Robledo",
-         "photos" : [
-            {
-               "height" : 480,
-               "html_attributions" : [ "Usuario de Google" ],
-               "photo_reference" : "CnRoAAAA8Vm5_nMvwrVX2VxGMYyJcdLNMcjMnZItS8T2cdzRY0K3VmN8auIGdob1BzqfVZUftzWplWzN5QbD4RXY7aZQUd3JvrOVfBFigEdPejfuxhxnq3kzkFnMqPzYODnuWkYnv8DQuor_GEVQkQq-qwZK2hIQLPfjigwqmsamILhu7dkUfRoU1m8LRqfRV7yjp44noWKf36hcqnw",
-               "width" : 640
-            }
-         ],
-         "rating" : 3.7,
-         "reference" : "CnRvAAAAuPlCq_LvoXYHxCCGiSiCxroGbkrSQSbicFRmmFXXjWRX2F5CsEmrmdeAgesVHnKhWqPSkojY9RWcTwJ0C1ART7iHlukWtrjHrbFCGerCuBCmOEpLXXWZfQsHC5101SXP5R3Y-WZk-LaXC4qb_Go5fRIQC_Ht8tV3XoUn3sx4xW4jvBoUfJ2kaaH4SF55ry96oyYHhEQMeeM",
-         "types" : [ "gym", "health", "establishment" ]
-      },
-      {
-         "formatted_address" : "Calle 36 Sur, Envigado, Antioquia, Colombia",
-         "geometry" : {
-            "location" : {
-               "lat" : 6.170641,
-               "lng" : -75.58622699999999
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-         "id" : "2b5c934652073796ada53e710bb986bef157a24c",
-         "name" : "PROPIEDADES Y BIENES",
-         "reference" : "CoQBcgAAAMKGkewxNloLbp32UVynB0hPsitANensnzYr_EJWFPj8mcveu_N2idohWv01pNpxEdEtRo_aR6zxy6tuM7D0t2R102401KVtTMkYYXukj5cxFK0SSeTdnx7ynJcG5O1NgYyGxNvCo28PvOBbQEro5fFzzoOgt5PzEFuEMCJ-9hu-EhD2IvpsAVNXzXinqxNsdXHsGhQrlHmCBBTLhUVRy5omoQ12TIhMFw",
-         "types" : [ "establishment" ]
-      },
-      {
-         "formatted_address" : "oficina 320, Carrera 43A # 19-17, Medellín, Antioquia, Colombia",
-         "geometry" : {
-            "location" : {
-               "lat" : 6.221577,
-               "lng" : -75.569909
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/travel_agent-71.png",
-         "id" : "a0ef954deeee77e42cf4ab9fd6523e2018b8f23e",
-         "name" : "Viajes Destino Antioquia",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "reference" : "CoQBdwAAAGcy88y9QPOOOsKHahyy5cHbuVIRXnZ6z94bUq-s77XTMqPvtmxqWokCR6lh8T-MRHbVQmQqtTzvvc7qW6_NQMpN_w1FfaFigCH55cF0uRr22J_nd6WWCMwGQXBde7ks51PpxU8Ddg0Lcy8TK-n25K08BvLi09Oonu5kdsZkZMlDEhD2yJknYjRTbWlSiRA4fWhqGhQGDCbe3CywVEmuJrZLJt50kwhcPA",
-         "types" : [ "travel_agency", "establishment" ]
-      },
-      {
-         "formatted_address" : "Medellín, Antioquia, Colombia",
-         "geometry" : {
-            "location" : {
-               "lat" : 6.211838,
-               "lng" : -75.565383
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-         "id" : "15cee78b3d07110ea2fea3f76996b672591c4288",
-         "name" : "Hotel Park 10",
-         "rating" : 4.9,
-         "reference" : "CnRrAAAAPMFfhnt5Wu5JdRHYL8zxw0h0AwsYlUClJtnxNq1NzrPbb696dFblv3jb6O2WFWZaXQOakwVrvim0j3iXFWeiabLDfDWB7HAhfK937tfl0dcybQGxPQLBU5vpyk2cVX_A_2AbjawvcSsUhWwWbHqHiRIQTYARSVYLmuzSpMvUsyYlDhoUxSZKx58EmDn_qN2ohQU7MXlW8wI",
-         "types" : [ "lodging", "establishment" ]
-      }
-   ],
-   "status" : "OK"
-}
+[
+  {
+    "carnet": "1",
+    "cedula": "1152688877",
+    "nombre": "fabio andres coentrao",
+    "fotos": "fotos/fab1.png,fotos/fab2.png,fotos/fab3.png",
+    "telefono": "5797216",
+    "zona_lng": "6.230787,-75.583363",
+    "idzona": "3",
+    "calificacion": "7"
+  },
+  {
+    "carnet": "2",
+    "cedula": "1152689760",
+    "nombre": "sergio andres arboleda",
+    "fotos": "fotos/papi1.png,fotos/papi2.png,fotos/papi3.png",
+    "telefono": "5703940",
+    "zona_lng": "6.231019,-75.583215",
+    "idzona": "3",
+    "calificacion": "9"
+  }
+]
