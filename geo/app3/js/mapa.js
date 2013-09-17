@@ -17,7 +17,7 @@
 				var ubicacion=new google.maps.LatLng(lat,lon);
 				var opcionesmapa={
 					center:ubicacion,
-					zoom:18,
+					zoom:19,
 					mapTypeId:google.maps.MapTypeId.SATELLITE
 				}
 				mapa=new google.maps.Map($("#mapa")[0],opcionesmapa);
@@ -107,14 +107,20 @@
 								         // DIBUJAR LOS MARKERS
 
 								         // FOR PAR DIBUJAR
-								         for(var i in datos){
+								         
 
 								         	// llamar a marks2 -- hasta que ya y hago una markers generica
 
-								         	//datos[i].cedula
+								         	//datos[i].carnet
+								         	//datos[i].zona_lng
 								         	//datos[i].nombre
+								         	//datos url get
+								         	//i url get
 
-								         }
+
+								         	marks2(datos)
+
+								         
 
 
 								    }
@@ -200,10 +206,29 @@
 	}
 
 
-			function marks2(lat,lon,message,image){
+			function marks2(datos){
 			// animation null
-		var ubicacion=new google.maps.LatLng(lat,lon);
-		var puntero=new google.maps.Marker({
+
+			var lng = datos[datos.length-1].zona_lng.split(',');
+			var image = 'js/img/market.png';
+			var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
+			mapa.setCenter(ubicacion);
+			marks(lng[0],lng[1],'<h3 style="color:red;"> '+datos[datos.length-1].nombre+'  </h3>','js/img/information.png');
+
+			delete datos[datos.length-1];
+
+			for(var i in datos){
+
+			         	// llamar a marks2 -- hasta que ya y hago una markers generica
+
+			         	//datos[i].carnet
+			         	//datos[i].zona_lng
+			         	//datos[i].nombre
+			         	//datos url get
+			         	//i url get
+			         	var lng = datos[i].zona_lng.split(',');
+			         	var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
+						var puntero=new google.maps.Marker({
 						position:ubicacion,
 						map:mapa,
 						animation: google.maps.Animation.DROP,
@@ -211,16 +236,28 @@
 						});
 
 
+						// CUANDO SE LE DE CLICK EL SIMPLEMENTE VA A DIRIGIR AL PHP Y CARGA LOS DATOS
+						var infowindow = new google.maps.InfoWindow({
+				    	content: 'Nombre :'+datos[i].nombre +'<br>Carnet : '+datos[i].carnet
+						});
 
-		  var infowindow = new google.maps.InfoWindow({
-				    content: message
+						//infowindow.open(mapa,puntero);
+   						agregaEvent (puntero,infowindow);
+
+         	}
+
+
+
+         	function agregaEvent (puntero,infowindow){
+         		google.maps.event.addListener(puntero, 'click', function() {
+				infowindow.open(mapa,puntero);
 				});
+         	}
+		
 
-			infowindow.open(mapa,puntero);
 
-			google.maps.event.addListener(puntero, 'click', function() {
-			infowindow.open(mapa,puntero);
-			});
+
+		  
 
 	}
 

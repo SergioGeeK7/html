@@ -36,11 +36,11 @@
 ///------------------------------------------------------------ END-----------------------------------
 //$consulta = mysqli_query($conexion,"SELECT nombre,idzona FROM zona WHERE nombre='$peticion'");
 
-$peticion = 'alpujarra';
-//$peticion = $_POST['peticion'];
+//$peticion = 'alpujarra';
+$peticion = $_POST['peticion'];
 $conexion = mysqli_connect('localhost','root','');
 mysqli_select_db($conexion,'espacio_publico');
-$consulta = mysqli_query($conexion,"SELECT idzona FROM zona WHERE nombre='$peticion'");
+$consulta = mysqli_query($conexion,"SELECT idzona,zona_lng,nombre FROM zona WHERE nombre='$peticion'");
 $id= mysqli_fetch_array($consulta);
 $consulta = mysqli_query($conexion,"SELECT * FROM vendedor WHERE idzona='".$id['idzona']."'");
 // $con =0;
@@ -55,7 +55,11 @@ $consulta = mysqli_query($conexion,"SELECT * FROM vendedor WHERE idzona='".$id['
 while($row=mysqli_fetch_assoc($consulta)){
 $output[]=$row;
 }
+$output[count($output)]['zona_lng'] = $id['zona_lng'];
+$output[count($output)-1]['nombre'] = $id['nombre'];
 print(json_encode($output));
+// print($output[0]['cedula']);
+// print($output[1]['cedula']);
 mysqli_close($conexion);
 
 
