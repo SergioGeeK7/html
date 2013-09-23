@@ -50,10 +50,6 @@
 			     		}
 			     		puntero.setPosition(evento.latLng);	
 
-			     		
-			     		
-
-			     		
 
 			     
 			     }); //--------------------------------Fin AGREGAR MARKERS
@@ -118,10 +114,7 @@
 								         	//i url get
 
 
-								         	marks2(datos)
-
-								         
-
+								         	marks2(datos);
 
 								    }
 								});
@@ -130,7 +123,7 @@
 						}
 
 				 	
-
+						
 				 
 
 				 //---------- END FILTRO	  || TAL VEZ QUIZO DECIR
@@ -242,15 +235,31 @@
 						});
 
 						//infowindow.open(mapa,puntero);
-   						agregaEvent (puntero,infowindow);
+   						agregaEvent (puntero,infowindow,datos[i]);
 
          	}
 
 
 
-         	function agregaEvent (puntero,infowindow){
+         	function agregaEvent (puntero,infowindow,datos){
          		google.maps.event.addListener(puntero, 'click', function() {
 				infowindow.open(mapa,puntero);
+
+				$.ajax({
+					    url: 'cargven.php',
+					    data: {
+					    		indice:i,
+					    		dataj:datos
+					        },
+					    type: 'POST',
+					    dataType: 'html',
+					    error: function (error){console.log(error);},
+					    success: function(datos){
+					     $("#mensaje").html(datos);
+					    }
+					});
+
+
 				});
          	}
 		
@@ -260,8 +269,6 @@
 		  
 
 	}
-
-
 
 
 	function fillPlace (arraycoords){

@@ -1,22 +1,16 @@
 [
   {
-    "carnet": "1",
-    "cedula": "1152688877",
-    "nombre": "fabio andres coentrao",
-    "fotos": "fotos/fab1.png,fotos/fab2.png,fotos/fab3.png",
-    "telefono": "5797216",
-    "zona_lng": "6.230787,-75.583363",
-    "idzona": "3",
-    "calificacion": "7"
+    "carnet": "3",
+    "cedula": "1156887954",
+    "nombre": "ana maria calderon",
+    "fotos": "fotos/ana1.png,fotos/ana2.png/fotos/ana3.png",
+    "telefono": "2555442",
+    "zona_lng": "6.273388,-75.592849",
+    "idzona": "2",
+    "calificacion": "10"
   },
   {
-    "carnet": "2",
-    "cedula": "1152689760",
-    "nombre": "sergio andres arboleda",
-    "fotos": "fotos/papi1.png,fotos/papi2.png,fotos/papi3.png",
-    "telefono": "5703940",
-    "zona_lng": "6.231019,-75.583215",
-    "idzona": "3",
-    "calificacion": "9"
+    "zona_lng": "6.27297,-75.593926",
+    "nombre": "exito de robledo"
   }
 ]

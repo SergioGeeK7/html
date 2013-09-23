@@ -4,8 +4,6 @@
 //JOIN vendedor V ON Q.CARNET = V.CARNET
 //JOIN zona Z ON V.IDZONA = Z.IDZONA
 //LIMIT 0 , 30
-
-
 $conexion = mysqli_connect('localhost','root','');
 mysqli_select_db($conexion,'espacio_publico');
 

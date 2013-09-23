@@ -1,0 +1,33 @@
+<html>
+ <head>
+
+ </head>
+
+ 
+ <body>
+	<div id="contenedor">
+
+	</div>
+
+	<script>
+		var contador = -1;
+		var capa     = document.getElementById("contenedor");
+		var lista    = new Array("muestra2.jpg", "muestra3.jpg","muestra4.jpg"); 
+		var links    = new Array("http://www.vidamrr.com", "http://www.google.com","http://wwww.facebook.com"); 
+
+		function slider(){
+			if(contador >= (lista.length - 1)){
+				contador = 0;
+			}else{
+				if(contador <  lista.length){
+					contador++;
+				}
+			}
+			capa.innerHTML = "<a href='" + links[contador] + "'><img src='" + lista[contador] + "' height='300' width='300' /></a>";
+			tiempo=setTimeout("slider()", 2000);
+
+		 }
+		 slider();
+	</script>
+ </body>
+</html>
