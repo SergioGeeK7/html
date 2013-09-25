@@ -1,0 +1,63 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lala</title>
+	 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script>
+
+	 $(document).ready(function(){
+    $('#button').click(function(){    
+        if($('input[name=conditions]').is(':checked')){
+            alert('La politica de privacidad ha sido aceptada');
+            return true;
+        }
+        else{
+            alert('Debe aceptar la politica de privacidad');
+            return false;
+        }
+    });
+});
+
+	</script>
+
+
+</head>
+<body>
+
+<form method="post">
+<input type="checkbox" name="conditions" id="conditions" /><br/>
+<input type="submit" name="Enviar" id="button" value="Enviar" />
+</form>
+	
+</body>
+</html> -->
+
+<script languaje="javascript">
+function habilita(form)
+{ 
+form.intereses[0].disabled = false;
+form.intereses[1].disabled = false;
+form.intereses[2].disabled = false;
+}
+
+function deshabilita(form)
+{ 
+form.intereses[0].disabled = true;
+form.intereses[1].disabled = true;
+form.intereses[2].disabled = true;
+}
+</script>
+ 
+El Formulario...
+ 
+<form name="ejemplo1">
+¿Desea suscribirse a nuestro boletín de novedades? <br>
+<input type="radio" name="boletin" value="si" checked onClick="habilita(this.form)"> SI, quiero suscribirme.
+<input type="radio" name="boletin" value="no" onClick="deshabilita(this.form)"> No, gracias.
+<br><br>
+Seleccione los temas de su interés:<br>
+<input type="checkbox" name="intereses" value="Arte y Cultura"> Arte y Cultura<br>
+<input type="checkbox" name="intereses" value="Ciencia">Ciencia<br>
+<input type="checkbox" name="intereses" value="Música">Música<br>
+</form>

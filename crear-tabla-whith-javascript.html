@@ -1,0 +1,75 @@
+<!-- <html>
+<head>
+ <meta charset="utf-8">
+ <title>Bajolinux | Ejemplo Tablas y jQuery</title>
+ <meta name="author" content="bajolinux.com">
+ <meta name="description" content="jQuery: Ejemplo de crear tablas dinámicas">
+ <meta name="viewport" content="width=device-width">
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+ <table id="tabla" border="1" width="400px"></table>
+</div>
+<script>
+$(document).ready(function(){
+    var tabla = $('#tabla');   
+    var data = [
+        ['fila 1', 'la segunda celda'],
+        ['fila 2', 'y otra mas']
+    ];
+    $.each(data, function(index, arrayValores) {
+        var $linea = $('<tr></tr>');         
+        $linea.append( $('<td></td>')
+            .attr({ id : 'posicion' + index + '1' }) // añadimos un atributo id
+            .html(arrayValores[0] )  // el valor de la celda    
+            .css({ background : 'red' }) // un estilo
+            .addClass("text") // una clase
+        );
+        $linea.append( $('<td></td>')
+            .attr({ id : 'posicion' + index + '2' })        
+            .html(arrayValores[1] )
+            .addClass("text")
+        );
+        tabla.append($linea);
+ });
+});
+</script>
+</body>
+</html>
+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<div id="dynamicTable"></div>
+
+
+<script>
+// create table
+var $table = $('<table>');
+$table.attr({ border :'1px' });
+// caption
+$table.append('<caption>MyTable</caption>')
+// thead
+.append('<thead>').children('thead')
+.append('<tr />').children('tr').append('<th>A</th><th>B</th><th>C</th><th>D</th>');
+
+//tbody
+var $tbody = $table.append('<tbody />').children('tbody');
+
+// add row
+$tbody.append('<tr />').children('tr:last')
+.append("<td>val</td>")
+.append("<td>val</td>")
+.append("<td>val</td>")
+.append("<td>val</td>");
+
+// add another row
+$tbody.append('<tr />').children('tr:last')
+.append("<td>val</td>")
+.append("<td>val</td>")
+.append("<td>val</td>")
+.append("<td>val</td>");
+
+// add table to dom
+$table.appendTo('#dynamicTable');
+</script>

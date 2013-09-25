@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>posicionamiento css</title>
+
+	<style>
+	
+#info{
+	position:relative; padding-left:280px; /*overflow:hidden;*/
+}
+img{
+	width:275px; 
+	height:204px;
+    position:absolute; 
+    left:1px; 
+    top:5px;
+}
+
+#next{
+width: 0px;
+height: 0px;
+border-style: solid;
+display: inline-block;
+border-width: 15.5px 0 15.5px 46px;
+border-color: transparent transparent transparent #007bff;
+-webkit-transform:rotate(360deg);
+border-style: inset;
+padding-right: 20px;
+
+}
+
+	</style>
+
+</head>
+<body>
+
+<div style="position:relative; padding-left:280px; overflow:hidden; ">
+    <img src="http://www.wextensible.com/temas/xhtml-css/ejemplos/css-propiedades/img_3.jpg" width="272" height="204" 
+    style="position:absolute; left:1px; top:5px;" alt="" />
+    En este ejemplo partimos de un párrafo configurado como división para 
+    englobar también una foto a la izquierda del texto que incluye. La división 
+    se configura...
+</div>
+
+
+
+
+
+
+<div id='info'>
+	<img src="geo/app3/fotos/papi1.png" alt="">
+Carnet	:<input type="text"><br>
+Nombre	:<input type="text" > <br>
+<div id="next"></div>
+</div>
+
+
+
+	
+</body>
+</html>

@@ -1,45 +1,51 @@
  <?php
 
-
 //$peticion = 1;
 $peticion = $_POST['peticion'];
-$conexion = mysqli_connect('localhost','root','');
-mysqli_select_db($conexion,'espacio_publico');
+$conexion = mysqli_connect('mysql.nixiweb.com','u478296747_root','password');
+mysqli_select_db($conexion,'u478296747_esp');
 
-if (gettype($peticion)=='string') {
+if (isset($_POST['carnet'])) {
 	
-$consulta = mysqli_query($conexion,"SELECT idzona,zona_lng,nombre FROM zona WHERE nombre='$peticion'");
-$id= mysqli_fetch_array($consulta);
-$consulta = mysqli_query($conexion,"SELECT * FROM vendedor WHERE idzona='".$id['idzona']."'");
-
-while($row=mysqli_fetch_assoc($consulta)){
-$output[]=$row;
-}
-$output[count($output)]['zona_lng'] = $id['zona_lng'];
-$output[count($output)-1]['nombre'] = $id['nombre'];
-print(json_encode($output));
+$consulta = mysqli_query($conexion,"SELECT V.* , Z.nombre AS 'znombre', Z.zona_lng AS 'zlng'
+FROM vendedor V
+INNER JOIN zona Z ON V.idzona = Z.idzona
+WHERE V.carnet = '$peticion'	");
 
 }else{
-// nombre zona .... zona_lng
-$consulta = mysqli_query($conexion,"SELECT V.*, Z.nombre, Z.zona_lng FROM vendedor V INNER JOIN zona Z ON
-V.idzona = Z.idzona WHERE carnet='$peticion' ");
 
-while($row=mysqli_fetch_assoc($consulta)){
-$output[]=$row;
+$consulta = mysqli_query($conexion,"SELECT V . * , Z.nombre AS  'znombre', Z.zona_lng AS  'zlng'
+FROM vendedor V
+INNER JOIN zona Z ON V.idzona = Z.idzona
+WHERE V.idzona =  '$peticion'");
 
-} // End while
-print(json_encode($output));
 
 }
 
-mysqli_close($conexion);
-// OPTIMIZAR DESPUES HACERLO EN UNA FUNCION CON EL SQL DE PARAMETRO
-// HACER UN ARLERT TABLE PARA RENOMBRAR EL CAMPO 
+while($row=mysqli_fetch_assoc($consulta)){
+$output[]=$row;
+}
+print(json_encode($output));
 
 
 
 
 
+// // nombre zona .... zona_lng
+// $consulta = mysqli_query($conexion,"SELECT V.*, Z.nombre, Z.zona_lng FROM vendedor V INNER JOIN zona Z ON
+// V.idzona = Z.idzona WHERE carnet='$peticion' ");
+
+// while($row=mysqli_fetch_assoc($consulta)){
+// $output[]=$row;
+
+// } // End while
+// print(json_encode($output));
+
+
+
+// mysqli_close($conexion);
+// // OPTIMIZAR DESPUES HACERLO EN UNA FUNCION CON EL SQL DE PARAMETRO
+// // HACER UN ARLERT TABLE PARA RENOMBRAR EL CAMPO 
 
 
 
