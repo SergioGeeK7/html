@@ -1,0 +1,116 @@
+{
+  "carabobo": {
+    "vendedores": [
+      {
+        "carnet": "4",
+        "cedula": "115266689",
+        "nombre": "andrea vetancur",
+        "fotos": "fotos/andrea1.png,fotos/andrea2.png,fotos/andrea3.png",
+        "telefono": "5703366",
+        "zona_lng": "6.253643,-75.568415",
+        "idzona": "4",
+        "calificacion": "8",
+        "znombre": " Carabobo",
+        "zlng": "6.253477,-75.568453"
+      },
+      {
+        "carnet": "5",
+        "cedula": "115266874",
+        "nombre": "carlos mario",
+        "fotos": "fotos/carlos1.png,fotos/carlos2.png,fotos/carlos3.png",
+        "telefono": "55447412",
+        "zona_lng": "6.253157,-75.568361",
+        "idzona": "4",
+        "calificacion": "3",
+        "znombre": " Carabobo",
+        "zlng": "6.253477,-75.568453"
+      },
+      {
+        "carnet": "6",
+        "cedula": "115245578",
+        "nombre": "maria rosa ",
+        "fotos": "fotos/maria1.png,fotos/maria2.png",
+        "telefono": "5558745",
+        "zona_lng": "6.253381,-75.568329",
+        "idzona": "4",
+        "calificacion": "4"
+      }
+    ],
+    "zlng": "6.253477,-75.568453"
+  },
+  "alpujarra": {
+    "vendedores": [
+      {
+        "carnet": "1",
+        "cedula": "1152688877",
+        "nombre": "fabio andres coentrao",
+        "fotos": "fotos/fab1.png,fotos/fab2.png,fotos/fab3.png",
+        "telefono": "5797216",
+        "zona_lng": "6.230787,-75.583363",
+        "idzona": "3",
+        "calificacion": "7",
+        "znombre": "alpujarra",
+        "zlng": "6.231128,-75.583291"
+      },
+      {
+        "carnet": "2",
+        "cedula": "1152689760",
+        "nombre": "sergio andres arboleda",
+        "fotos": "fotos/papi1.png,fotos/papi2.png,fotos/papi3.png",
+        "telefono": "5703940",
+        "zona_lng": "6.231019,-75.583215",
+        "idzona": "3",
+        "calificacion": "9",
+        "znombre": "alpujarra",
+        "zlng": "6.231128,-75.583291"
+      }
+    ],
+    "zlng": "6.231128,-75.583291"
+  },
+  "exito de robledo": {
+    "vendedores": [
+      {
+        "carnet": "3",
+        "cedula": "1156887954",
+        "nombre": "ana maria calderon",
+        "fotos": "fotos/ana1.png,fotos/ana2.png,fotos/ana3.png",
+        "telefono": "2555442",
+        "zona_lng": "6.273388,-75.592849",
+        "idzona": "2",
+        "calificacion": "10",
+        "znombre": "exito de robledo",
+        "zlng": "6.27297,-75.593926"
+      }
+    ],
+    "zlng": "6.27297,-75.593926"
+  },
+    "parque de robledo": {
+    "vendedores": [
+      {
+        "carnet": "7",
+        "cedula": "1115287874",
+        "nombre": "mario balotelli",
+        "fotos": "fotos/mario1.png,fotos/mario2.png,fotos/mario3.png",
+        "telefono": "74584585",
+        "zona_lng": "6.27594,-75.59639",
+        "idzona": "5",
+        "calificacion": "5",
+        "znombre": "parque de robledo",
+        "zlng": "6.275735,-75.596164"
+      },
+      {
+        "carnet": "8",
+        "cedula": "1458758996",
+        "nombre": "cristiano ronaldo",
+        "fotos": "fotos/cristiano1.png,fotos/cristiano2.png,fotos/cristiano3.png",
+        "telefono": "6698574",
+        "zona_lng": "6.275503,-75.595956",
+        "idzona": "5",
+        "calificacion": "1",
+        "znombre": "parque de robledo",
+        "zlng": "6.275735,-75.596164"
+      }
+    ],
+    "zlng": "6.275735,-75.596164"
+  }
+}
