@@ -2,8 +2,8 @@
 
 //$peticion = 1;
 $peticion = $_POST['peticion'];
-$conexion = mysqli_connect('mysql.nixiweb.com','u478296747_root','password');
-mysqli_select_db($conexion,'u478296747_esp');
+$conexion = mysqli_connect('localhost','root','');
+mysqli_select_db($conexion,'espacio_publico');
 
 if (isset($_POST['carnet'])) {
 	

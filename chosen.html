@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+
+        <!-- scale the devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- include bootstrap css files -->
+        <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.css" />
+
+        <title>Twitter Bootstrap + Choosen</title>
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->        
+
+        <!-- includ jquery and bootstrap script -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+
+        <!-- choosen -->
+        <link rel="stylesheet" type="text/css" href="/chosen/chosen.css" />
+        <script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready( function() { 
+            // chosen select
+            $("form select").chosen({no_results_text: "No results matched"});
+        });
+        </script>
+    </head>
+
+    <body>
+        <!-- container -->
+        <div class="container">
+
+            <!-- content -->
+            <div class="row">
+                <div class="span12">
+                    <!-- user form -->
+                    <form method="post" action="" class="form-horizontal">
+                        <div class="control-group">
+                            <label for="group_id" class="control-label">User Group : </label>
+                            <div class="controls">
+                                <select name="group_id" id="group_id" class="input-xlarge">
+                                    <option value="">select...</option>
+                                    <option value="1">Administrator</option>
+                                    <option value="3"selected="selected">Users</option>
+                                    <option value="4">Random</option>
+                                    <option value="5">Super New</option>
+                                    <option value="6">Famous</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- // end form -->
+                </div>
+            </div>
+            <!-- // end content -->
+
+        </div>
+        <!-- // end container -->
+    </body>
+</html>

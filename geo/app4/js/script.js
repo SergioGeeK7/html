@@ -23,12 +23,12 @@
 	    	//console.log(datos["exito de robledo"].vendedores[0].carnet);
 
 	        var select =$('#filtro');
-	        	select.chosen({
+	        	select.select2({
 	        	no_results_text: "No hay ningun lugar llamado",
 			    width: "20%"
 			    });
 
-			select.on('change', function(evt, params) {
+			select.on('select2-selecting', function(params) {
 		    
 				$('#mensaje').html("");
 				var $table = $('<table>');
@@ -42,19 +42,19 @@
 
 
 
-		    for (var i in datos[params.selected].vendedores){
+		    for (var i in datos[params.val].vendedores){
 
 				// add row
-				var fotos = datos[params.selected].vendedores[i].fotos.split(',');
+				var fotos = datos[params.val].vendedores[i].fotos.split(',');
 
 				var $tr = $tbody.append('<tr />').children('tr:last');
 
 
-				$tr.append("<td>"+datos[params.selected].vendedores[i].nombre+"</td>")
-				.append("<td>"+datos[params.selected].vendedores[i].carnet+"</td>")
+				$tr.append("<td>"+datos[params.val].vendedores[i].nombre+"</td>")
+				.append("<td>"+datos[params.val].vendedores[i].carnet+"</td>")
 				.append("<td> <img src='"+fotos[0]+"'/> </td>");
 
-				addEvento($tr,datos[params.selected].vendedores[i]);
+				addEvento($tr,datos[params.val].vendedores[i]);
 					    
 			}
 					    // add table to dom
@@ -75,8 +75,7 @@
 					    dataType: 'html',
 					    error: function (error){console.log(error);},
 					    success: function(datos){
-					    select.trigger("chosen:updated");
-					    select.chosen({width : "95%"}); 
+					    
 					    $("#mensaje").html(datos);
 					    }
 						});

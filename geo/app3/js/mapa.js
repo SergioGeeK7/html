@@ -58,20 +58,19 @@
 
 				 $('#chcarnet').click(function (event){
 
-				 	$('#filtro_chosen').hide('fast');
-					$('#buscar').show('fast');
-					$('#btnbuscar').show('slow');
 				 	
+				 	$('#s2id_filtro').hide('fast');
+				 	$('#btnbuscar').show('slow');
+				 	$('#buscar').show('fast');
 
 
 				 });
 				 
 				 $('#chzona').click(function (event){
 
-
+				 	$('#buscar').hide('slow');
 				 	$('#btnbuscar').hide('fast');
-					$('#buscar').hide('fast');
-					$('#filtro_chosen').show('fast');
+				 	$('#s2id_filtro').show('fast');
 
 				 });
 
@@ -100,19 +99,22 @@
 			            }
 
 			            var select =$('#filtro');
-			            	select.chosen({
+			            	select.select2({
 			            	no_results_text: "No hay ningun lugar llamado",
-						    width: "20%"
+						    width: "20%",
+						    formatNoMatches:function (term){
+						    	return "No se encuentra el lugar llamado '"+term+"'..."
+						    }
 						    });
 
+			            
 
-
-							select.on('change', function(evt, params) {
+							select.on('change', function(params) {
 						    
 						    $.ajax({
 								    url: 'recivirpeticion.php',
 								    data: {
-								    		peticion:params.selected
+								    		peticion:params.val
 								          },
 								    type: 'POST',
 								    dataType: 'json',
