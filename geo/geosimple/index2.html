@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#divMapa{
+		width: 100%;
+		height: 400px;
+	}
+	</style>
+
+</head>
+<body>
+
+
+
+<div id="divMapa"></div>
+<div id="mensaje"></div>
+
+
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+	(function(){
+	var divMapa = document.getElementById('divMapa');
+
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(
+			function(Posicion) {
+				var LONGITUD=Posicion.coords.longitude, LATITUD=Posicion.coords.latitude;
+				var Coordenadas = new google.maps.LatLng(LATITUD,LONGITUD);
+				var Opciones = {
+					mapTypeId:google.maps.MapTypeId.SATELLITE,
+					zoom: 19,
+					mapTypeControl: true,
+					center: Coordenadas
+					
+				};
+				var Mapa = new google.maps.Map(divMapa,Opciones);
+				var Marcador = new google.maps.Marker({
+					title: 'Esta es mi ubicación',
+					position: Coordenadas,
+					map: Mapa
+				});
+
+				var places = new Array();
+				google.maps.event.addListener(Mapa, "click", function(evento) {
+			     
+			     document.getElementById('mensaje').innerHTML= evento.latLng.lat()+","+evento.latLng.lng();
+			    
+			     		
+
+			     		var	puntero= new google.maps.Marker({
+							position:evento.latLng,
+							map:Mapa,
+							});
+
+			     
+
+			     places.push(evento.latLng.lat()+","+evento.latLng.lng());
+			     var compara =[LATITUD,LONGITUD];
+			     var aux = new Array();
+			     var aux2 = new Array();
+			     var apx = new Array();
+			     aux2[0]=999999999;
+			     aux2[1]=999999999;
+			     aux[0]=0;
+			     var medir = google.maps.geometry.spherical;
+			     for (var i in places){
+
+			     	
+
+			     	
+
+
+			     	
+
+			     }
+
+			     console.log(apx[0]+","+apx[1]);
+			   
+
+			     
+			     }); 
+
+
+
+			}, function(Error){
+				}
+			
+		);
+	} 
+})();
+</script>
+</body>
+</html>

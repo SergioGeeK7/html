@@ -17,7 +17,7 @@
 				var ubicacion=new google.maps.LatLng(lat,lon);
 				var opcionesmapa={
 					center:ubicacion,
-					zoom:19,
+					zoom:18,
 					mapTypeId:google.maps.MapTypeId.SATELLITE
 				}
 				mapa=new google.maps.Map($("#mapa")[0],opcionesmapa);
@@ -73,7 +73,6 @@
 				 	$('#s2id_filtro').show('fast');
 
 				 });
-
 
 
 				 //------- END MODO FILTRO

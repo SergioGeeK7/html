@@ -1,0 +1,31 @@
+// 	ESPACIO PUBLICO
+
+// PALACE CALLE PALACE CR 50
+// PASAJE LA BASTILLA
+// JUNIN CALLE
+// AYACUCHO 49
+// LA ORIENTAL
+// LA PLAYA
+// PASAJE LA CANDELARIA
+// EL HUECO
+// LA PLAZA BOTERO
+// CALLE 50  AVENIDA COLOMBIA
+// 
+
+// BUSCAR MAS CON (MAPS) POR ZONAS DEL CENTRO 
+// INVESTIGAR SITIOS(LUGARES) CONTROLADOS POR ESPACIO PUBLICO
+
+
+///http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://12c1f48168133f6b4b795db91c0f9943
+///http://www.medellin.gov.co/irj/portal/ciudadanos?NavigationTarget=navurl://12c1f48168133f6b4b795db91c0f9943
+
+
+// DE IGUAL MANERA SE TENDRIA QUE IMPLEMENTAR UNA BASE DE DATOS PARA LAS HUBICACIONES DE CADA VENDEDOR
+
+
+// *Funciones de mi programa  --carnetización
+// *primero lo geolocaliza a ud y le muestra el mapa... con los venderores permitidos alli.... lugares etc... 
+// *luego ud puede meter un filtro y buscar otros lugares ver cuantos vendedores estan permitidos alli
+// dar click a cada vendedor y ver sus estadisticas.... 
+// *denunciar zona... lugar por maximo de vendedores o otros...reportar anomalia
+

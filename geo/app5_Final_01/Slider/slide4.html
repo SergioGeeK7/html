@@ -1,0 +1,61 @@
+<!-- http://www.vidamrr.com/2012/11/como-hacer-el-slider-mas-sencillo-y.html
+<!doctype html> -->
+
+
+<!doctype html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script>
+	var i = 0;
+$(document).on("ready", main);
+
+function main(){
+	var control = setInterval(cambiarSlider, 2000);
+}
+
+function cambiarSlider(){
+	i++;
+	if(i == $("#slider img").size()){
+		i = 0;
+	}
+	$("#slider img").hide();
+	$("#slider img").eq(i).fadeIn("medium");g1
+}
+	</script>
+	<style>
+
+#slider{
+	height: 50px;
+	width: 50px;
+}
+#fotos{
+		height: 150px;
+		width: 150px;
+}
+#slider img{
+	display: none;
+}
+#slider img:nth-child(1){
+	display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="flecha-up"></div>
+<div class="flecha-down"></div>
+<div id="slider">
+	<img id='fotos'src="g1.jpg">
+	<img id='fotos'src="g2.png">
+	<img id='fotos'src="g3.jpg">
+	
+</div>
+</body>
+</html>
+
+
+
+
