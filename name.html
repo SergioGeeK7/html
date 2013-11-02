@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+
+	<script>
+
+	function rnd(minv, maxv){
+	if (maxv < minv) return 0;
+	return Math.floor(Math.random()*(10)) + 1;
+}
+
+function createName()
+{
+	var letters = 'abcdefghijklmnopqrstuvwxyz';
+	var s = 'Agireso';
+	for (var i=0; i<4; i++) {
+		s = s + rnd(0, letters.length - 1);
+	}
+	return s;
+}
+
+console.log(createName());
+
+	</script>
+	
+</body>
+</html>

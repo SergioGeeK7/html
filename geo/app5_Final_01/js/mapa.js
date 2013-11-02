@@ -1,20 +1,22 @@
 		var mapa;
+		var markers = new Array();
 		$(document).on("ready",inicio);
 		function inicio(){
 			
-			$('#btnbuscar').hide();
-			$('#buscar').hide();
-			navigator.geolocation.getCurrentPosition(mostrar,error);
+			
+
+			navigator.geolocation.getCurrentPosition(mostrar,error); // Arrancar geo
 			
 			function error(){} // Funcion para mostrar error
 
 			function mostrar(datos){
 				var lat=datos.coords.latitude;
 				var lon=datos.coords.longitude;
-				var ubicacion=new google.maps.LatLng(lat,lon);
+				//var ubicacion=new google.maps.LatLng(lat,lon);
+				var ubicacion=new google.maps.LatLng(6.231128,-75.583291);
 				var opcionesmapa={
 					center:ubicacion,
-					zoom:18,
+					zoom:19,
 					mapTypeId:google.maps.MapTypeId.SATELLITE
 				}
 				mapa=new google.maps.Map($("#mapa")[0],opcionesmapa);
@@ -33,14 +35,28 @@
 				});
 
 				infowindow.open(mapa,puntero);
-				google.maps.event.addListener(puntero, 'click', function() {
-				infowindow.open(mapa,puntero);
-				});
 				
+				//---- circle
+				/*var ubi_circle= new google.maps.LatLng(6.273388,-75.592849);
+				var populationOptions = {
+				      strokeColor: '#FF0000',
+				      strokeOpacity: 0.8,
+				      strokeWeight: 2,
+				      fillColor: '#FF0000',
+				      fillOpacity: 0.35,
+				      map: mapa,
+				      center: ubi_circle,
+				      radius: 150
+				};
+				    // Add the circle for this city to the map.
+				    cityCircle = new google.maps.Circle(populationOptions);
 
-				//---- cargar lugares
 
-				var places;
+				//---------------*/
+
+				//---- cargar vendedor
+
+				var vendedor;
 				$.ajax({
 			    url: 'managetables.php',
 			    type: 'POST',
@@ -48,77 +64,25 @@
 			    error: function (error){console.log(error);},
 			    success: function(datos){
 			    	
-		    	this.places = datos;
-
-
-
+			    	vendedor = datos;
+			    	mostrarVendedor(vendedor,ubicacion);
 				}
 
 				});
 
-				//---- end carga lugares
+				//---- end carga vendedor
 
 
 
-				//----------------------------- CREAR TABLA Y AGREGAR MARKERS
+				//----------------------------- CAPTURA LOCALIZACION
 
 				 google.maps.event.addListener(mapa, "click", function(evento) {
 			     // Obtengo las coordenadas como objeto latLng || evento.latLng
 			     $("#mensaje").text(evento.latLng.lat()+","+evento.latLng.lng());
 			     puntero.setPosition(evento.latLng);
-
-			     var latitud=evento.latLng.lat();
-			     var longitud=evento.latLng.lng();
-			     for (var i in places){
-
-
-
-			     }
-
-
-
-
-			    $.ajax({url: 'recivirpeticion.php',
-			    data: {
-			    		peticion:params.val
-			          },
-			    type: 'POST',
-			    dataType: 'json',
-			    error: function (error){console.log(error);},
-			    success: function(datos){
-			         $('#mensaje').text(JSON.stringify(datos, null, 4));
-		         		marks2(datos,false);
-			         
-		         	// CREAR TABLA
-
-// $('#mensaje').html("");
-// var $table = $('<table>');
-// $table.attr({ border :'1px' });
-// // thead
-// $table.append('<thead>').children('thead')
-// .append('<tr />').children('tr').append('<th>Nombre</th><th> # de carnet </th> <th> Fotos </th>');
-
-// //tbody
-// var $tbody = $table.append('<tbody />').children('tbody');
-
-// for (var i in datos){
-// 	// add row
-// 	var fotos = datos[i].fotos.split(',');
-
-// 	$tbody.append('<tr />').children('tr:last')
-// 	.append("<td>"+datos[i].nombre+"</td>")
-// 	.append("<td>"+datos[i].carnet+"</td>")
-// 	.append("<td> <img src='"+fotos[0]+"'/> </td>");
-// }
-
-// // add table to dom
-// $table.appendTo('#mensaje');
-
-								    }
-								
-								    });
+			     mostrarVendedor(vendedor,evento.latLng);
 			     
-			     }); //----------------------------- CREAR TABLA Y AGREGAR MARKERS
+			     }); //----------------------------- CAPTURA LOCALIZACION
 
 
 
@@ -127,92 +91,93 @@
 
 		}
 
-		
-		function marks(lat,lon,message,image){
-			// animation null
-		var ubicacion=new google.maps.LatLng(lat,lon);
-		var puntero=new google.maps.Marker({
-						position:ubicacion,
-						map:mapa,
-						animation: google.maps.Animation.DROP,
-						icon:image
-						});
+
+		//----------------------------- CREAR TABLA Y AGREGAR MARKERS
+		function mostrarVendedor (vendedor,latLng){
+
+		// limpiar markers anteriores
+	     for (var i in markers){
+	     	markers[i].setPosition(null);
+	     }
+
+	     
+	     $('#mensaje').html("");
+
+	     var $table = $('<table>');
+		 $table.attr({ border :'1px' });
+		// thead
+		 $table.append('<thead>').children('thead').append('<tr />')
+		 .children('tr').append('<th>Nombre</th><th> # de carnet </th> <th> Foto </th>');
+
+		//tbody
+		 var $tbody = $table.append('<tbody />').children('tbody');
+
+	     for (var i in vendedor){
+
+	     	var lng = vendedor[i].zona_lng.split(',');
+	     	var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
+		     if (google.maps.geometry.spherical.computeDistanceBetween(latLng,ubicacion,150)
+		     	<0.0035000000000000000){
+
+				// add row
+				var fotos = vendedor[i].fotos.split(',');
+
+				$tbody.append('<tr />').children('tr:last')
+				.append("<td>"+vendedor[i].nombre+"</td>")
+				.append("<td>"+vendedor[i].carnet+"</td>")
+				.append(
+				"<td> <a href='"+fotos[0]+"'> <img src='fotos/online-store-icon.png'/> </a> </td>");
 
 
-		var infowindow = new google.maps.InfoWindow({
-				    content: message
-				});
+				// add table to dom
+				$table.appendTo('#mensaje');
+				marks2(vendedor[i]);
+				
+		     }
 
-			infowindow.open(mapa,puntero);
+
+	    }
+
+	     if ($('#mensaje').text()=="") {
+	     	
+	     	$('#mensaje').html("No hay vendedores cercanos ...");
+	     	 
+	     }else{
+
+		    $("td a").facybox();
+			$("#facybox").click(function(){
+		  	$.facybox.close();
+			});
+
+	     }
+
+
+		} ///----------------------------- CREAR TABLA Y AGREGAR MARKERS
+
+		// DIBUJAR vendedor
+		function marks2(vendedor){
+
+			var lng = vendedor.zona_lng.split(',');
+			var image = 'js/img/market.png';
+		    var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
+
+			var puntero=new google.maps.Marker({
+			position:ubicacion,
+			map:mapa,
+			animation: google.maps.Animation.DROP,
+			icon:image
+			});
+			
+			// CUANDO SE LE DE CLICK EL SIMPLEMENTE VA A DIRIGIR AL PHP Y CARGA LOS vendedor
+			var infowindow = new google.maps.InfoWindow({
+	    	content: 'Nombre :'+vendedor.nombre +'<br>Carnet : '+vendedor.carnet
+			});
 
 			google.maps.event.addListener(puntero, 'click', function() {
 			infowindow.open(mapa,puntero);
+
 			});
+	     	// contar markador para despues limpiarlo
+	     	markers.push(puntero);
 
-		}
-
-
-			// DIBUJAR VENDEDORES
-			function marks2(datos,carnet){
-			// animation null
-			// si esta buscando por carnet segundo parametro
-			var lng = datos[0].zlng.split(',');
-			var image = 'js/img/market.png';
-			var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
-			mapa.setCenter(ubicacion);
-			marks(lng[0],lng[1],'<h3 style="color:red;"> '+datos[0].znombre+'  </h3>','js/img/information.png');
-			punteros = new Array ();
-			for(var i in datos){
-
-			         	// llamar a marks2 -- hasta que ya y hago una markers generica
-
-			         	//datos[i].carnet
-			         	//datos[i].zona_lng
-			         	//datos[i].nombre
-			         	//datos url get
-			         	//i url get
-			         	var lng = datos[i].zona_lng.split(',');
-			         	var ubicacion=new google.maps.LatLng(lng[0],lng[1]);
-
-
-						var puntero=new google.maps.Marker({
-						position:ubicacion,
-						map:mapa,
-						animation: google.maps.Animation.DROP,
-						icon:image
-						});
-
-
-						// CUANDO SE LE DE CLICK EL SIMPLEMENTE VA A DIRIGIR AL PHP Y CARGA LOS DATOS
-						var infowindow = new google.maps.InfoWindow({
-				    	content: 'Nombre :'+datos[i].nombre +'<br>Carnet : '+datos[i].carnet
-						});
-
-						//infowindow.open(mapa,puntero);
-   						agregaEvent (puntero,infowindow,datos[i]);
-
-         	} // ----- END DIBUJAR VENDEDOR
-
-	}
-
-	//---- CARGAR VENDEDOR INFO
-	function agregaEvent (puntero,infowindow,datos){
-         		google.maps.event.addListener(puntero, 'click', function() {
-				infowindow.open(mapa,puntero);
-
-				$.ajax({
-					    url: 'cargven.php',
-					    data: {
-					    		dataj:datos
-					        },
-					    type: 'POST',
-					    dataType: 'html',
-					    error: function (error){console.log(error);},
-					    success: function(datos){
-					    $("#mensaje").html(datos);
-					    }
-					});
-
-
-				});
-         	}	// --- END VENDEDOR INFO
+		}// ----- END DIBUJAR VENDEDOR
