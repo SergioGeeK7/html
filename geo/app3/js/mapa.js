@@ -77,8 +77,6 @@
 
 				 //------- END MODO FILTRO
 
-
-
 				 //------------------------------ AUTOCOMPLETAR
 				 
 				 $.ajax({

@@ -1,0 +1,23 @@
+img {
+	width:250px;
+	height:250px;
+}
+a{margin: 2px;}
+table, td {
+	border: 2px #70b8ff dashed;
+}
+table {margin: 0 auto;}
+h1{
+	color:#70b8ff;
+	text-align: center;
+}
+th{color:crimson;}
+
+body{
+	background-color: gray;
+}
+nav{
+	margin: 0 auto;
+	text-align: center;
+}
+
