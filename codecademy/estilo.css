@@ -6,7 +6,10 @@ a{margin: 2px;}
 table, td {
 	border: 2px #70b8ff dashed;
 }
-table {margin: 0 auto;}
+table {margin: 0 auto;
+-webkit-border-radius: 10px 50px 50px 100px;
+border-radius: 10px 50px 50px 100px;
+}
 h1{
 	color:#70b8ff;
 	text-align: center;
@@ -14,7 +17,18 @@ h1{
 th{color:crimson;}
 
 body{
-	background-color: gray;
+	background-image: -webkit-gradient(
+	linear,
+	right bottom,
+	left bottom,
+	color-stop(0, rgb(73, 212, 84)),
+	color-stop(0.84, rgb(33, 55, 82))
+);
+background-image: -o-linear-gradient(left, rgb(73, 212, 84) 0%, rgb(33, 55, 82) 84%);
+background-image: -moz-linear-gradient(left, rgb(73, 212, 84) 0%, rgb(33, 55, 82) 84%);
+background-image: -webkit-linear-gradient(left, rgb(73, 212, 84) 0%, rgb(33, 55, 82) 84%);
+background-image: -ms-linear-gradient(left, rgb(73, 212, 84) 0%, rgb(33, 55, 82) 84%);
+background-image: linear-gradient(to left, rgb(73, 212, 84) 0%, rgb(33, 55, 82) 84%);
 }
 nav{
 	margin: 0 auto;
