@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/pc.css" id="template"/>
+</head>
+<body>
+<select name="plantilla">
+    <option value="">Selecciona una plantilla</option>
+    <option value="pc">Plantilla para pc</option>
+    <option value="pchd">Plantilla alta definicion</option>
+    <option value="movil">Plantilla para telefono movil</option>
+    <option value="tablet">Plantilla para tablet</option>
+</select>
+<hr/>
+<div id="contenedor">
+    <header>
+        <div id="titulo">
+            <div id="logo">
+
+            </div>
+            <h1>titulo de la web</h1>
+
+            <h2>eslogan de la web</h2>
+        </div>
+        <div style="clear:both"></div>
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+        <div style="clear:both"></div>
+    </header>
+
+    <section>
+        <div id="contieneportafolio">
+            <article class="artportafolio" id="porta1">
+                <div class="contieneportafoliointeior">
+                    <h3>titulo del proyecto</h3>
+
+                    <p>breve descripcion</p>
+
+                    <div class="imagen"></div>
+                </div>
+            </article>
+
+
+            <article class="artportafolio" id="porta2">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta3">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta4">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta5">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta6">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta7">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta8">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta9">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+
+            <article class="artportafolio" id="porta10">
+                
+                <div class="contieneportafoliointeior">
+</div><h3>titulo del proyecto</h3>
+
+                <p>breve descripcion</p>
+
+                <div class="imagen"></div>
+                <div class="contieneportafoliointeior">
+</div>
+            </article>
+
+            <div style="clear:both"></div>
+        </div>
+
+    </section>
+
+    <footer>
+        <h6>(c) Seryo</h6>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script>
+    $(document).on("ready", function () {
+        $("select").change(function () {
+
+            // .text() contenido de la etiqueta
+            // .val(); value del control
+            // .attr() 
+            var plantilla = $(this).val(); // cogemos el value del option
+            console.log(plantilla);
+            $("#template").attr("href", "css/" + plantilla + ".css");
+
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

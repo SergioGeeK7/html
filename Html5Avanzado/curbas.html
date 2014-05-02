@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+<style>
+
+    body {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: #000;
+    }
+
+    .divCentrado {
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        width: 500px;
+        vertical-align: central;
+        color: #ffffff;
+    }
+
+    .controles {
+        padding-top: 300px;
+    }
+
+    .fila {
+        text-align: center;
+        width: 100%;
+        margin: 10px;
+    }
+
+    #contenedor {
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+        vertical-align: central;
+        color: #fff;
+    }
+
+
+</style>
+<body>
+
+
+<div class="divCentrado controles">
+    <div class="fila">
+        <input id="Green" type="button" style="background-color: green;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(0,250,0,0.4)')"/>
+        <input id="red" type="button" style="background-color: red;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(250,0,0,0.4)')"/>
+        <input id="blue" type="button" style="background-color: blue;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(0,0,250,0.4)')"/>
+    </div>
+
+    <div id="fila">
+        <input id="maxValue" type="number" name="maxValue" value="10" style="width: 35px;"/>
+        <input type="button" onclick="changeColor('maxValue',-1)" value="-"/>
+        <input type="button" onclick="changeColor('maxValue',1)" value="+"/>
+    </div>
+
+
+</div>
+
+
+<div id="contenedor" class="divCentrado"></div>
+
+
+<script src="js/modernizr.custom.31795.js"></script>
+<script>
+
+    var canvas, context, lastx,lasty,prelastx,prelasty;
+
+    window.onload = function () {
+
+        var contenedor = document.getElementById("contenedor");
+
+        if (Modernizr.canvas) {
+            canvas = document.createElement("canvas");
+            canvas.with = 600;
+            canvas.height = 300;
+            contenedor.appendChild(canvas);
+            context = canvas.getContext("2d");
+            context.strokeStyle = "#f0ff00";
+            context.lineWidth = 2;
+
+
+            addListeners();
+
+        } else {
+            contenedor.innerHTML = "el navegador no soporta canvas";
+        }
+
+
+        function dibujaQuad(e) {
+
+            if(lastx != null && prelastx != null){
+            // 3ra vez que haga click
+
+                context.beginPath();
+                context.moveTo(prelastx,prelasty);
+                context.quadraticCurveTo(lastx,lasty, e.layerX, e.layerY);
+                context.stroke();
+
+                prelastx = null;
+                prelasty = null;
+
+            }else if(lastx != null){
+                prelastx = lastx;
+                prelasty = lasty;
+            }
+
+
+            lastx = e.layerX;
+            lasty = e.layerY;
+
+        }
+
+        function dibujaBez(e){
+
+
+            if(lastx != null && prelastx != null){
+                // 3ra vez que haga click
+                context.strokeStyle = "#ff0000";
+                context.beginPath();
+
+                context.bezierCurveTo(prelastx,prelasty,lastx,lasty, e.layerX, e.layerY);
+                context.stroke();
+
+                prelastx = null;
+                prelasty = null;
+
+            }else if(lastx != null){
+                prelastx = lastx;
+                prelasty = lasty;
+            }
+
+
+            lastx = e.layerX;
+            lasty = e.layerY;
+
+
+
+
+        }
+        function addListeners() {
+
+            canvas.addEventListener("mousedown", function (e) {
+               // dibujaQuad(e);
+                dibujaBez(e);
+            });
+
+            canvas.addEventListener("touchstart", function (e) {
+               // dibujaQuad(e);
+                dibujaBez(e);
+            });
+
+        }
+//4
+
+    }
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

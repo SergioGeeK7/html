@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        canvas{
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<canvas id="lienzo"></canvas>
+
+<input type="text"/>
+
+
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script>
+
+    $(document).on("ready",function(){
+        var canvas = document.getElementById("lienzo");
+        var contexto = canvas.getContext("2d");
+        // HTML5 GAMEENGINE para ver que framework de canvas me conviene
+        // convinar dos frameworks
+        contexto.fillStyle="rgb(255,3,0)";
+        contexto.fillRect(10,10,30,30);
+
+        // CodeIntel for sublime text
+        // Modernizr libreria
+
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

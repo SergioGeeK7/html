@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+<style>
+
+    body {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: #000;
+    }
+
+    .divCentrado{
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        width: 500px;
+        vertical-align: central;
+        color: #ffffff;
+    }
+
+    .controles{
+        padding-top: 300px;
+    }
+
+    .fila{
+        text-align: center;
+        width: 100%;
+        margin: 10px;
+    }
+
+
+    #contenedor {
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+        vertical-align: central;
+        color: #fff;
+    }
+
+
+
+
+</style>
+<body>
+
+
+<div class="divCentrado controles" >
+    <div class="fila">
+        <input id="Green" type="button" style="background-color: green;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(0,250,0,0.4)')"/>
+        <input id="red" type="button" style="background-color: red;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(250,0,0,0.4)')"/>
+        <input id="blue" type="button" style="background-color: blue;width: 25px;height: 25px;"
+               onclick="changeColor('rgba(0,0,250,0.4)')"/>
+    </div>
+
+    <div id="fila">
+        <input id="maxValue" type="number" name="maxValue" value="10" style="width: 35px;"/>
+        <input type="button" onclick="changeColor('maxValue',-1)" value="-"/>
+        <input type="button" onclick="changeColor('maxValue',1)" value="+"/>
+    </div>
+
+
+</div>
+
+
+<div id="contenedor" class="divCentrado"></div>
+
+
+<script src="js/modernizr.custom.31795.js"></script>
+<script>
+
+    var canvas, context,color,radio;
+    var valores, postX, direccion;
+    var texto;
+
+    window.onload = function () {
+
+        var contenedor = document.getElementById("contenedor");
+
+        if (Modernizr.canvas) {
+            canvas = document.createElement("canvas");
+            canvas.with = 600;
+            canvas.height = 300;
+            contenedor.appendChild(canvas);
+            context = canvas.getContext("2d");
+
+            color ="rgba(0,250,0,0.4)";
+            radio = document.getElementById("maxValue").value;
+           // dibujaForma();
+
+            addListeners();
+
+        } else {
+            contenedor.innerHTML = "el navegador no soporta canvas";
+        }
+
+
+    }
+    //https://www.video2brain.com/mx/videos-56487.htm
+
+    function dibujaForma(e){
+        context.beginPath();
+        context.fillStyle = color;
+      //  console.debug(e);
+
+        var _radio = 1+ Math.ceil(Math.random() *radio);
+        var _desX = 1+ Math.ceil(Math.random() *radio);
+        var _desY = 1+ Math.ceil(Math.random() * radio);
+
+        context.arc(e.layerX+_desX, e.layerY+_desY,_radio,0,Math.PI*2);
+        context.fill();
+    }
+
+
+    function changeColor(input,valor){
+        var campo = document.getElementById(input);
+        var nuevoValor = Number(campo.value) + valor;
+        if(nuevoValor <= 0){
+            nuevoValor = 1;
+        }else if(nuevoValor > 30){
+            nuevoValor = 30;
+        }
+        campo.value = nuevoValor;
+        radio = nuevoValor;
+    }
+
+
+    function changeColor(valor){
+        color= valor;
+        console.log("hellow");
+    }
+
+
+    function addListeners (){
+        canvas.addEventListener("mousedown",function (e){
+            dibujaForma(e);
+        });
+
+        canvas.addEventListener("mousemove",function(e){
+            dibujaForma(e);
+        });
+
+        canvas.addEventListener("touchstart",function (e){
+
+        });
+
+        canvas.addEventListener("touchmove",function (e){
+            dibujaForma(e);
+        });
+
+        canvas.addEventListener("touchend",function (e){
+
+        });
+
+        document.addEventListener("touchcancel",function (e){
+
+        });
+
+        document.addEventListener("mouseup",function (e){
+
+            canvas.removeEventListener("mousemove",function(){});
+            document.removeEventListener("mouseup",null);
+
+        });
+
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

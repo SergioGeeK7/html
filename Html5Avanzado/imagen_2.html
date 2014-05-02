@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+<style>
+
+    body {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: #000;
+    }
+
+    #contenedor {
+        position: absolute;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+        vertical-align: central;
+        color: #fff;
+    }
+
+
+</style>
+<body>
+
+
+<div id="contenedor" class="divCentrado"></div>
+<video src="img/Code%20Geass%20R2%20-%2018%20by%20anghellp.mp4" display="none" id="vid">tu navegador no soporta videos html5 ... actualizate</video>
+
+
+<script src="js/modernizr.custom.31795.js"></script>
+<script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
+<script>
+
+    var canvas, context,vid;
+
+    window.onload = function () {
+
+        var contenedor = document.getElementById("contenedor");
+
+        if (Modernizr.canvas) {
+            canvas = document.createElement("canvas");
+            canvas.with = 600;
+            canvas.height = 300;
+            contenedor.appendChild(canvas);
+            context = canvas.getContext("2d");
+            context.strokeStyle = "#f0ff00";
+            context.lineWidth = 2;
+
+
+
+        } else {
+            contenedor.innerHTML = "el navegador no soporta canvas";
+        }
+
+
+
+    };
+
+
+    function initVideo(){
+        vid = document.getElementById("vid");
+
+        angle = -1;
+        topOffset = 72;
+        leftOffset = 22;
+        imageWith = 480;
+        imageHeight = 270;
+
+        tWide = imageWith/2;
+        tHigh = imageHeight/2;
+
+        xOffset = imageWith/4;
+        yOffset = imageHeight/4;
+
+        vid.play();
+        animate();
+
+    }
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

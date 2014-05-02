@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+<body>
+
+
+    <div id="contenedor"></div>
+
+    <script src="js/modernizr.custom.31795.js"></script>
+    <script>
+
+        var canvas,context;
+        var valores,postX,direccion;
+        var texto;
+
+        window.onload = function(){
+
+        var contenedor = document.getElementById("contenedor");
+
+            if(Modernizr.canvas){
+                canvas = document.createElement("canvas");
+                canvas.with=600;
+                canvas.height=600;
+                contenedor.appendChild(canvas);
+                context = canvas.getContext("2d");
+            }else{
+                contenedor.innerHTML="el navegador no soporta canvas";
+            }
+            recuperaGet(); // recupera variables por get
+            postX=100;
+            direccion=1;
+            setInterval(dibujaTexto,1);
+
+
+        }
+
+
+        function dibujaTexto(){
+            // canvas es un lienzo
+            // no es un texto al que se pueda manipular o tener propiedades o acceder a sus metodos
+            // estoy literalmente pintando ensima de el
+            context.clearRect(0,0,canvas.with,canvas.height); // limpiar un rectangulo especifico en la pantalla
+            context.fillStyle="#FFFF";
+            context.font="20px Amarante"; // _sans
+            var tam = context.measureText(decodeURIComponent(texto)); // retorna la medida de el texto que luego pondre en la caja(canvas)
+            context.fillText(decodeURIComponent(texto),postX,150);
+
+
+            // una vez pintados no tenga la opcion de retocarlos de ninguna manera
+
+            context.fillStyle="#FF00";
+            context.font="10px _sans";
+            //////////////context.fillText("HELLOW",150,300);
+
+            // propiedades del texto en canvas
+
+            // font,textAlign,textBaseline,measureText()
+
+
+            //texto = "hello";
+
+            //////////////context.fillText(texto,150,150);
+
+
+
+            if(postX >600-tam.width){
+                direccion *=-1;
+            }else if(postX <0){
+                direccion *= -1;
+            }
+            postX += direccion;
+
+
+            ///////////context.fillText("w",150+tam.with,150); // + tam para que me lo copie exactamente despues de el y no sobre el
+
+        }
+
+
+
+
+        function recuperaGet(){
+
+            var igualdades= location.href.split("?")[1].split("&");
+
+            for (var i = 0; i < igualdades.length; i++) {
+               igualdades[i]= igualdades[i].split("+").join(" "); // quito los + de la url
+               valores =  igualdades[i].split("=");
+               this[valores[0]]=valores[1]; // creando un array heretogeneo
+               texto =this[valores[0]];
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
